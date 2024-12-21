@@ -1,5 +1,5 @@
 {
-  "name": "Demo1",
+  "name": "vite-ts",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -17,6 +17,7 @@
     "vite": "^6.0.3"
   },
   "dependencies": {
-    "lodash-es": "^4.17.21"
+    "lodash-es": "^4.17.21",
+    "typescript": "^5.7.2"
   }
 }
