@@ -4,11 +4,11 @@ type genderDto = 0|1
 export default class Person {
     name: string;
     age: number;  // 普通属性
-    // gender?:genderDto;  // 只读属性
+    gender?:genderDto;  // 只读属性
     constructor(name: string, age: number,gender?:genderDto) {  // 构造函数
         this.name = name;
         this.age = age;
-        // this.gender = gender;
+        this.gender = gender;
     }
     clonePerson(person:Person){
         return new Person(person.name,person.age);
