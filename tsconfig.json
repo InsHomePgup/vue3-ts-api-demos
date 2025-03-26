@@ -5,6 +5,7 @@
     "resolvePackageJsonExports": true,
     "resolveJsonModule": true,
     "noEmit": true,
-    "allowImportingTsExtensions": true
+    "allowImportingTsExtensions": true,
+    "types": ["unplugin-vue-router/client"]
   }
 }
