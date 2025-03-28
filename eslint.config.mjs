@@ -67,6 +67,9 @@ const eslintObj = antfu(
         },
       }],
       'vue/html-self-closing': 'off',
+      /* demo 项目所以添加一下允许为空的rule */
+      'unused-imports/no-unused-vars': 'off',
+      'no-empty': 'off',
     },
   },
   {

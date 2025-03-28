@@ -8,7 +8,7 @@
     </div>
 
     <!-- 聊天消息区域 -->
-    <div class="flex-1 p-4 overflow-y-auto bg-gray-100 flex flex-col gap-4">
+    <div class="p-4 flex flex-col flex-1 overflow-y-auto bg-gray-100 gap-4">
       <!-- 使用v-for遍历聊天记录 -->
       <div
         v-for="(message, index) in chatMessages"
@@ -17,7 +17,7 @@
         :class="message.isSelf ? 'self-end' : ''"
       >
         <!-- 对方头像 (仅在非自己发送的消息显示在左侧) -->
-        <div v-if="!message.isSelf" class="w-10 h-10 rounded-full overflow-hidden flex-shrink-0">
+        <div v-if="!message.isSelf" class="overflow-hidden w-10 h-10 rounded-full flex-shrink-0">
           <img :src="message.avatar" alt="头像" class="w-full h-full object-cover">
         </div>
 
@@ -27,12 +27,12 @@
             {{ message.sender }}
           </div>
           <div
-            class="p-3 rounded-lg shadow-sm mt-1"
+            class="rounded-lg p-3 shadow-sm mt-1"
             :class="message.isSelf ? 'bg-blue-500 text-white' : 'bg-white'"
           >
             {{ message.content }}
           </div>
-          <div class="text-xs text-gray-500 mt-1">
+          <div class="mt-1 text-xs text-gray-500">
             {{ message.time }}
           </div>
         </div>
@@ -45,12 +45,12 @@
     </div>
 
     <!-- 输入区域 -->
-    <div class="flex p-4 border-t border-gray-200 bg-white">
+    <div class="flex p-4 border-gray-200 border-t bg-white">
       <input
         v-model="newMessage"
         type="text"
         placeholder="输入消息..."
-        class="flex-1 px-4 py-2 border border-gray-300 rounded-l-lg focus:outline-none"
+        class="flex-1 border px-4 py-2 border-gray-300 rounded-l-lg focus:outline-none"
         @keyup.enter="sendMessage"
       >
       <button

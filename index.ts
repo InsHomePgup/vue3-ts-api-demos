@@ -47,7 +47,7 @@ if (tuple.length === 3) {
 const symbolA: symbol = Symbol('A')
 const symbolB: symbol = Symbol('A')
 console.log(symbolA, symbolB)
-console.log(symbolA == symbolB)
+console.log(symbolA === symbolB)
 
 function funA(numA: number, strA: string, booA: boolean): void {
 
@@ -63,12 +63,10 @@ interface sumFunc {
   (numA: number, strA: string, booA: boolean): void
 }
 
-let sum: sumFunc
-sum = () => {
+const sum: sumFunc = () => {
 
 }
 
-// @ts-ignore
 // type sumFunction = (number,number)=>number;
 // function sum : sumFunc(numA,numB){
 //     return numA + numB;
