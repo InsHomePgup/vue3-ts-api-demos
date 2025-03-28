@@ -2,10 +2,10 @@
   "compilerOptions": {
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
-    "resolvePackageJsonExports": true,
     "resolveJsonModule": true,
-    "noEmit": true,
+    "resolvePackageJsonExports": true,
+    "types": ["unplugin-vue-router/client"],
     "allowImportingTsExtensions": true,
-    "types": ["unplugin-vue-router/client"]
+    "noEmit": true
   }
 }

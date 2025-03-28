@@ -1,7 +1,5 @@
 <template>
-    <div>
-
-    </div>
+  <div />
 </template>
 
 <script setup lang="ts">
@@ -38,28 +36,27 @@
 //
 // main();
 
-
 function taskWithEvent() {
-    setTimeout(() => {
-        console.log("Task finished");
-        const event = new Event("taskComplete");
-        document.dispatchEvent(event);  // 触发自定义事件
-    }, 1000);
+  setTimeout(() => {
+    console.log('Task finished')
+    const event = new Event('taskComplete')
+    document.dispatchEvent(event) // 触发自定义事件
+  }, 1000)
 }
 
 function waitForTask() {
-    return new Promise(resolve => {
-        document.addEventListener("taskComplete", resolve);
-    });
+  return new Promise((resolve) => {
+    document.addEventListener('taskComplete', resolve)
+  })
 }
 
 async function main() {
-    taskWithEvent();
-    await waitForTask();  // 等待 taskComplete 事件
-    console.log("After task");
+  taskWithEvent()
+  await waitForTask() // 等待 taskComplete 事件
+  console.log('After task')
 }
 
-main();
+main()
 </script>
 
 <style scoped>

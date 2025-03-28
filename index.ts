@@ -17,14 +17,15 @@
 //     salary?:number
 //     readonly gender ?:0|1
 // }
-import Person from './person.ts';
-console.log(Person);
-let Bob = new Person('Bob',20);
-console.log(Bob);
+import Person from './person.ts'
+
+console.log(Person)
+const Bob = new Person('Bob', 20)
+console.log(Bob)
 // Bob.gender = 0;
-Bob.setGender(0);
-console.log(Bob);
-const BobGender = Bob.getGender();
+Bob.setGender(0)
+console.log(Bob)
+const BobGender = Bob.getGender()
 console.log(BobGender)
 
 /**
@@ -32,39 +33,38 @@ console.log(BobGender)
  * 确定的数量和类型
  */
 
-
-const tuple:[string,number,boolean?] = ['1',1];
+const tuple: [string, number, boolean?] = ['1', 1]
 
 console.log(tuple)
-if(tuple.length===2){
+if (tuple.length === 2) {
 
 }
 
-if(tuple.length===3){
+if (tuple.length === 3) {
 
 }
 
-let symbolA :symbol = Symbol('A');
-let symbolB : symbol = Symbol('A');
-console.log(symbolA,symbolB);
-console.log(symbolA==symbolB)
+const symbolA: symbol = Symbol('A')
+const symbolB: symbol = Symbol('A')
+console.log(symbolA, symbolB)
+console.log(symbolA == symbolB)
 
-function funA(numA:number,strA:string,booA:boolean):void{
+function funA(numA: number, strA: string, booA: boolean): void {
 
 }
 
-function funB(numA:number):Promise<number>{
-    return new Promise((resolve,reject)=>{
-        resolve(numA);
-    })
+function funB(numA: number): Promise<number> {
+  return new Promise((resolve, reject) => {
+    resolve(numA)
+  })
 }
 
-interface sumFunc{
-    (numA:number,strA:string,booA:boolean):void
+interface sumFunc {
+  (numA: number, strA: string, booA: boolean): void
 }
 
-let sum:sumFunc;
-sum = ()=>{
+let sum: sumFunc
+sum = () => {
 
 }
 
@@ -75,7 +75,3 @@ sum = ()=>{
 // }
 
 export default 'hello'
-
-
-
-
