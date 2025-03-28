@@ -18,6 +18,8 @@
     "@vitejs/plugin-vue": "^5.2.3",
     "lint-staged": "^15.5.0",
     "lodash-es": "^4.17.21",
+    "pinia": "^3.0.1",
+    "pinia-plugin-persistedstate-2": "^2.0.30",
     "simple-git-hooks": "^2.12.1",
     "typescript": "^5.8.2",
     "vue": "^3.5.13",
@@ -35,7 +37,8 @@
   },
   "pnpm": {
     "onlyBuiltDependencies": [
-      "esbuild"
+      "esbuild",
+      "simple-git-hooks"
     ]
   },
   "simple-git-hooks": {

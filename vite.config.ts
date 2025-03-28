@@ -25,9 +25,12 @@ export default defineConfig({
       imports: [
         'vue',
         'vue-router',
-        // 'pinia',
+        {
+          pinia: ['useCounterStore'],
+        },
         // '@vueuse/core',
       ],
+      dts: 'src/auto-imports.d.ts', // 自动生成 dts 文件
     }),
     UnoCSS(),
   ],

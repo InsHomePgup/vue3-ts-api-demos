@@ -6,6 +6,11 @@
     "resolvePackageJsonExports": true,
     "types": ["unplugin-vue-router/client"],
     "allowImportingTsExtensions": true,
-    "noEmit": true
+    "noEmit": true,
+    "include": [
+      "src/**/*.ts",
+      "src/**/*.vue",
+      "src/auto-imports.d.ts" // 确保路径正确
+    ]
   }
 }
