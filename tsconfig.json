@@ -2,6 +2,9 @@
   "compilerOptions": {
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
+    "paths": {
+      "@/*": ["src/*"]
+    },
     "resolveJsonModule": true,
     "resolvePackageJsonExports": true,
     "types": ["unplugin-vue-router/client"],
