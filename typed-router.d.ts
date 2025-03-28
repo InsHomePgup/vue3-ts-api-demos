@@ -26,5 +26,6 @@ declare module 'vue-router/auto-routes' {
     '/map': RouteRecordInfo<'/map', '/map', Record<never, never>, Record<never, never>>,
     '/set': RouteRecordInfo<'/set', '/set', Record<never, never>, Record<never, never>>,
     '/sort': RouteRecordInfo<'/sort', '/sort', Record<never, never>, Record<never, never>>,
+    '/unocss/unocss01': RouteRecordInfo<'/unocss/unocss01', '/unocss/unocss01', Record<never, never>, Record<never, never>>,
   }
 }
