@@ -16,9 +16,11 @@
   "dependencies": {
     "@types/lodash-es": "^4.17.12",
     "@vitejs/plugin-vue": "^5.2.3",
+    "lint-staged": "^15.5.0",
     "lodash-es": "^4.17.21",
     "pinia": "^3.0.1",
     "pinia-plugin-persistedstate-2": "^2.0.30",
+    "simple-git-hooks": "^2.12.1",
     "typescript": "^5.8.2",
     "vue": "^3.5.13",
     "vue-router": "^4.5.0",
@@ -38,5 +40,11 @@
     "onlyBuiltDependencies": [
       "esbuild"
     ]
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged"
+  },
+  "lint-staged": {
+    "*": "eslint . --fix"
   }
 }
