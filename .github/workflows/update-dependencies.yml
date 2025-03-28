@@ -5,6 +5,9 @@ on:
     - cron: '0 3 * * 1' # 每周一凌晨 3 点执行（UTC 时间）
   workflow_dispatch: # 允许手动触发
 
+permissions:
+  contents: write
+
 jobs:
   update-dependencies:
     runs-on: ubuntu-latest
@@ -48,5 +51,6 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/InsHomePgup/vue3-ts-api-demo.git
           git commit -m "chore: auto update dependencies"
           git push origin main
