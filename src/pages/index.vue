@@ -10,10 +10,9 @@
 </template>
 
 <script setup lang="ts">
-import { useCounterStore } from '@/stores/counter.ts'
+import { useCounterStore } from '@/stores/counter'
 
 const countStore = useCounterStore()
-console.log('导入的store-----', countStore)
 </script>
 
 <style scoped>
