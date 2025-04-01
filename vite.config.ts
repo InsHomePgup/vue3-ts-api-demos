@@ -1,4 +1,4 @@
-import { resolve } from 'node:path'
+import path, { resolve } from 'node:path'
 import * as process from 'node:process'
 import vue from '@vitejs/plugin-vue'
 import UnoCSS from 'unocss/vite'
@@ -14,9 +14,9 @@ const pathResolve = (path: string): string => resolve(root, path)
 
 export default defineConfig({
   resolve: {
-    alias: [
-      { find: '@', replacement: pathResolve('src') },
-    ],
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+    },
   },
   plugins: [
     VueRouter(),

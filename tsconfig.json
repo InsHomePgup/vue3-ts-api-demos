@@ -1,19 +1,21 @@
 {
   "compilerOptions": {
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
-    "paths": {
-      "@/*": ["src/*"]
-    },
+    "target": "ESNext",
+    "jsx": "preserve",
+    "jsxImportSource": "vue",
+    "lib": ["ESNext", "DOM"],
+    "useDefineForClassFields": true,
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "paths": { "@/*": ["./src/*"] },
     "resolveJsonModule": true,
-    "resolvePackageJsonExports": true,
     "types": ["unplugin-vue-router/client"],
-    "allowImportingTsExtensions": true,
-    "noEmit": true,
-    "include": [
-      "src/**/*.ts",
-      "src/**/*.vue",
-      "src/auto-imports.d.ts" // 确保路径正确
-    ]
-  }
+    "strict": true,
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "skipLibCheck": true
+  },
+  "references": [{ "path": "./tsconfig.node.json" }],
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"]
 }
