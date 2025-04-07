@@ -17,7 +17,7 @@
 //     salary?:number
 //     readonly gender ?:0|1
 // }
-import Person from './person.ts'
+import Person from './person'
 
 console.log(Person)
 const Bob = new Person('Bob', 20)
