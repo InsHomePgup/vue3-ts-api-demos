@@ -23,12 +23,14 @@
     "pinia-plugin-persistedstate-2": "^2.0.30",
     "simple-git-hooks": "^2.12.1",
     "typescript": "^5.8.2",
+    "uuid": "^11.1.0",
     "vue": "^3.5.13",
     "vue-router": "^4.5.0",
     "vue-tsc": "^2.2.8"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^4.11.0",
+    "@types/uuid": "^10.0.0",
     "@unocss/eslint-plugin": "66.1.0-beta.7",
     "eslint": "^9.23.0",
     "unocss": "66.1.0-beta.7",
