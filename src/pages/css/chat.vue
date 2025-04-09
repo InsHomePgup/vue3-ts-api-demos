@@ -28,7 +28,7 @@
           </div>
 
           <!-- 头像 -->
-          <div class="w-10 h-10 rounded-full overflow-hidden mx-2 flex-shrink-0">
+          <div class="rounded-full overflow-hidden mx-2 w-10 h-10 flex-shrink-0">
             <img :src="message.avatar" alt="头像" class="w-full h-full object-cover">
           </div>
 
@@ -114,8 +114,9 @@ const messages = [
 
 // 判断是否需要显示时间戳分隔线
 function shouldShowTimestamp(index: number): boolean {
-  if (index === 0)
-    return true // 第一条消息总是显示时间戳
+  if (index === 0) {
+    return true
+  } // 第一条消息总是显示时间戳
 
   const currentTime = new Date(messages[index].time)
   const prevTime = new Date(messages[index - 1].time)

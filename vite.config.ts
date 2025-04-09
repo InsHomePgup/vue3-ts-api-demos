@@ -7,6 +7,9 @@ import VueRouter from 'unplugin-vue-router/vite'
 
 import { defineConfig } from 'vite'
 
+import { consoleBuildInfo } from 'vite-plugin-build-console'
+import vueDevTools from 'vite-plugin-vue-devtools'
+
 const root: string = process.cwd()
 
 /** 路径拼接函数，简化代码 */
@@ -34,8 +37,11 @@ export default defineConfig({
       dts: 'src/auto-imports.d.ts', // 自动生成 dts 文件
     }),
     UnoCSS(),
+    consoleBuildInfo(),
+    vueDevTools(),
   ],
   server: {
+    open: true,
     port: 5150,
     host: '0.0.0.0',
   },

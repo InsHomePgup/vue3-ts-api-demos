@@ -4,7 +4,7 @@
     "jsx": "preserve",
     "baseUrl": "./",
     "rootDir": "src",
-    "module": "ESNext",
+    "module": "NodeNext",
     "moduleResolution": "NodeNext",
     "paths": {
       "@/*": ["src/*"]
