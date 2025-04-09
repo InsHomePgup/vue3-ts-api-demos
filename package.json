@@ -11,7 +11,9 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint",
-    "lint:fix": "eslint --fix"
+    "lint:fix": "eslint --fix",
+    "prepare": "pnpm simple-git-hooks",
+    "commitlint": "commitlint --config commitlint.config.mjs --from HEAD~1 --to HEAD --verbose"
   },
   "dependencies": {
     "@types/lodash-es": "^4.17.12",
@@ -30,6 +32,8 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "link:C:/Users/user/WebstormProjects/eslint-config",
+    "@commitlint/cli": "^19.8.0",
+    "@commitlint/config-conventional": "^19.8.0",
     "@types/uuid": "^10.0.0",
     "@unocss/eslint-plugin": "66.1.0-beta.10",
     "eslint": "^9.24.0",
@@ -47,7 +51,8 @@
     ]
   },
   "simple-git-hooks": {
-    "pre-commit": "npx lint-staged"
+    "pre-commit": "npx lint-staged",
+    "commit-msg": "pnpm commitlint --config commitlint.config.mjs --edit $1"
   },
   "lint-staged": {
     "*": "eslint . --fix"
