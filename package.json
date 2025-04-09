@@ -13,7 +13,7 @@
     "lint": "eslint",
     "lint:fix": "eslint --fix",
     "prepare": "pnpm simple-git-hooks",
-    "commitlint": "commitlint --config commitlint.config.mjs --from HEAD~1 --to HEAD --verbose"
+    "commitlint": "commitlint --edit"
   },
   "dependencies": {
     "@types/lodash-es": "^4.17.12",
@@ -52,7 +52,7 @@
   },
   "simple-git-hooks": {
     "pre-commit": "npx lint-staged",
-    "commit-msg": "pnpm commitlint --config commitlint.config.mjs --edit $1"
+    "commit-msg": "pnpm commitlint $1"
   },
   "lint-staged": {
     "*": "eslint . --fix"
