@@ -1,16 +1,16 @@
 <template>
-  <div class="flex flex-col max-w-800px mx-auto border border-gray-200 rounded-lg overflow-hidden shadow-md h-screen">
+  <div class="flex flex-col border border-gray-200 rounded-lg max-w-800px mx-auto overflow-hidden shadow-md h-screen">
     <div class="bg-blue-500 text-white p-4 text-center">
       <h2 class="text-xl font-medium">
         聊天记录
       </h2>
     </div>
 
-    <div class="p-4 flex-1 overflow-y-auto bg-gray-100">
+    <div class="p-4 flex-1 bg-gray-100 overflow-y-auto">
       <template v-for="(message, index) in messages" :key="index">
         <!-- 时间戳分隔线 -->
         <div v-if="shouldShowTimestamp(index)" class="flex justify-center my-4">
-          <div class="bg-gray-200 text-gray-600 text-xs px-3 py-1 rounded-full">
+          <div class="text-gray-600 py-1 bg-gray-200 text-xs px-3 rounded-full">
             {{ formatTimestamp(message.time) }}
           </div>
         </div>
