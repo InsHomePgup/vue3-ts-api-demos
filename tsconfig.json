@@ -2,8 +2,6 @@
   "compilerOptions": {
     "target": "ESNext",
     "jsx": "preserve",
-    "jsxFactory": "h",
-    "jsxFragmentFactory": "Fragment",
     "baseUrl": "./",
     "rootDir": "src",
     "module": "NodeNext",
@@ -11,7 +9,7 @@
     "paths": {
       "@/*": ["src/*"]
     },
-    "types": ["vite/client"],
+    "types": ["vite/client", "unplugin-vue-jsx/types"],
     "allowJs": true,
     "strict": true,
     "noFallthroughCasesInSwitch": true,

@@ -7,3 +7,14 @@
 保持更新到最新依赖。
 
 使用unplugin来提升快速编写demo的体验。
+
+### 开启代码提交的eslint检查和commit内容检查
+
+```json
+{
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged",
+    "commit-msg": "pnpm commitlint $1"
+  }
+}
+```
