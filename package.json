@@ -18,6 +18,7 @@
   "dependencies": {
     "@types/lodash-es": "^4.17.12",
     "@vitejs/plugin-vue": "^5.2.3",
+    "axios": "^1.8.4",
     "lint-staged": "^15.5.0",
     "localforage": "^1.10.0",
     "lodash-es": "^4.17.21",
@@ -27,8 +28,10 @@
     "typescript": "^5.8.3",
     "uuid": "^11.1.0",
     "vue": "^3.5.13",
+    "vue-draggable-plus": "^0.6.0",
     "vue-router": "^4.5.0",
-    "vue-tsc": "^2.2.8"
+    "vue-tsc": "^2.2.8",
+    "vuedraggable": "^2.24.3"
   },
   "devDependencies": {
     "@antfu/eslint-config": "link:C:/Users/user/WebstormProjects/eslint-config",

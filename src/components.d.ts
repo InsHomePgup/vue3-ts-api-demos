@@ -9,8 +9,12 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     Button: typeof import('./components/Button.tsx')['default']
+    Card02: typeof import('./components/Card02.vue')['default']
+    InputCard: typeof import('./components/InputCard.vue')['default']
+    LevelCard: typeof import('./components/LevelCard.vue')['default']
     MyCard: typeof import('./components/MyCard.tsx')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    ThreeLevelSelector: typeof import('./components/ThreeLevelSelector.vue')['default']
   }
 }

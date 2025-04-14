@@ -1,7 +1,7 @@
 <template>
-  <div class="flex flex-col border border-gray-200 rounded-lg max-w-800px mx-auto overflow-hidden shadow-md h-screen">
-    <div class="bg-blue-500 text-white p-4 text-center">
-      <h2 class="text-xl font-medium">
+  <div class="flex border flex-col border-gray-200 rounded-lg max-w-800px mx-auto overflow-hidden shadow-md h-screen">
+    <div class="p-4 bg-blue-500 text-white text-center">
+      <h2 class="font-medium text-xl">
         聊天记录
       </h2>
     </div>
@@ -10,14 +10,14 @@
       <template v-for="(message, index) in messages" :key="index">
         <!-- 时间戳分隔线 -->
         <div v-if="shouldShowTimestamp(index)" class="flex justify-center my-4">
-          <div class="text-gray-600 py-1 bg-gray-200 text-xs px-3 rounded-full">
+          <div class="py-1 text-gray-600 bg-gray-200 text-xs px-3 rounded-full">
             {{ formatTimestamp(message.time) }}
           </div>
         </div>
 
         <!-- 消息气泡 -->
         <div
-          class="flex mb-5 items-center"
+          class="flex items-center mb-5"
           :class="[
             message.isSelf ? 'flex-row-reverse' : 'flex-row',
           ]"
@@ -39,7 +39,7 @@
               message.isSelf ? 'items-end' : 'items-start',
             ]"
           >
-            <div class="font-bold text-sm mb-1">
+            <div class="text-sm mb-1 font-bold">
               {{ message.sender }}
             </div>
             <div

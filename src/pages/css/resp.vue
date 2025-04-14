@@ -4,13 +4,13 @@
       <h1 class="text-xl font-bold">
         响应式布局示例
       </h1>
-      <div class="py-1 mt-2 px-2 rounded" :class="isMobile ? 'bg-red-500' : 'bg-green-500'">
+      <div class="py-1 px-2 rounded mt-2" :class="isMobile ? 'bg-red-500' : 'bg-green-500'">
         当前设备: {{ isMobile ? '移动端' : 'PC端' }}
       </div>
     </header>
 
     <main class="flex flex-col flex-1 p-4 md:flex-row">
-      <section class="flex-1 grid gap-4" :class="isMobile ? 'grid-cols-1' : 'grid-cols-3'">
+      <section class="flex-1 gap-4 grid" :class="isMobile ? 'grid-cols-1' : 'grid-cols-3'">
         <div
           v-for="i in 3"
           :key="i"
