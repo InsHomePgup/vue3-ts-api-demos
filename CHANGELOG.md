@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0-beta.1](https://github.com/InsHomePgup/vue3-ts-api-demos/compare/v1.1.0-beta.0...v1.1.0-beta.1) (2025-04-24)
+
+
+### Features
+
+* add axios ([dbe1c87](https://github.com/InsHomePgup/vue3-ts-api-demos/commit/dbe1c875ec0f667b821afd90881e637e564d4ade))
+
 ## 1.1.0-beta.0 (2025-04-24)
 
 
