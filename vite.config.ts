@@ -56,6 +56,16 @@ export default defineConfig({
         'vue',
         'vue-router',
         {
+          axios: [
+            // default imports
+            ['default', 'axios'], // import { default as axios } from 'axios',
+            // named imports
+            'AxiosInstance',
+            'AxiosRequestConfig',
+            'AxiosResponse'
+          ]
+        },
+        {
           pinia: ['useCounterStore'],
         },
       ],
