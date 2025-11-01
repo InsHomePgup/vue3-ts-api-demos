@@ -12,7 +12,6 @@
     "build": "vite build",
     "lint": "eslint",
     "lint:fix": "eslint --fix",
-    "prepare": "pnpm simple-git-hooks",
     "commitlint": "commitlint --edit",
     "commit": "cz",
     "release": "standard-version",
@@ -59,7 +58,9 @@
   },
   "pnpm": {
     "onlyBuiltDependencies": [
-      "esbuild",
+      "esbuild"
+    ],
+    "ignoredBuiltDependencies": [
       "simple-git-hooks"
     ]
   },

@@ -32,4 +32,80 @@ declare module 'vue-router/auto-routes' {
     '/vue/01': RouteRecordInfo<'/vue/01', '/vue/01', Record<never, never>, Record<never, never>>,
     '/vue/02': RouteRecordInfo<'/vue/02', '/vue/02', Record<never, never>, Record<never, never>>,
   }
+
+  /**
+   * Route file to route info map by unplugin-vue-router.
+   * Used by the volar plugin to automatically type useRoute()
+   *
+   * Each key is a file path relative to the project root with 2 properties:
+   * - routes: union of route names of the possible routes when in this page (passed to useRoute<...>())
+   * - views: names of nested views (can be passed to <RouterView name="...">)
+   *
+   * @internal
+   */
+  export interface _RouteFileInfoMap {
+    'src/pages/index.vue': {
+      routes: '/'
+      views: never
+    }
+    'src/pages/axios/axios01.vue': {
+      routes: '/axios/axios01'
+      views: never
+    }
+    'src/pages/css/chat.vue': {
+      routes: '/css/chat'
+      views: never
+    }
+    'src/pages/css/flex.vue': {
+      routes: '/css/flex'
+      views: never
+    }
+    'src/pages/css/resp.vue': {
+      routes: '/css/resp'
+      views: never
+    }
+    'src/pages/ts/array/index01.vue': {
+      routes: '/ts/array/index01'
+      views: never
+    }
+    'src/pages/ts/index01.vue': {
+      routes: '/ts/index01'
+      views: never
+    }
+    'src/pages/ts/index02.vue': {
+      routes: '/ts/index02'
+      views: never
+    }
+    'src/pages/ts/index03.vue': {
+      routes: '/ts/index03'
+      views: never
+    }
+    'src/pages/ts/string/index01.vue': {
+      routes: '/ts/string/index01'
+      views: never
+    }
+    'src/pages/tsx/index01.vue': {
+      routes: '/tsx/index01'
+      views: never
+    }
+    'src/pages/vue/01.vue': {
+      routes: '/vue/01'
+      views: never
+    }
+    'src/pages/vue/02.vue': {
+      routes: '/vue/02'
+      views: never
+    }
+  }
+
+  /**
+   * Get a union of possible route names in a certain route component file.
+   * Used by the volar plugin to automatically type useRoute()
+   *
+   * @internal
+   */
+  export type _RouteNamesForFilePath<FilePath extends string> =
+    _RouteFileInfoMap extends Record<FilePath, infer Info>
+      ? Info['routes']
+      : keyof RouteNamedMap
 }
