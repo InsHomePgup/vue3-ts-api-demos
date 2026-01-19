@@ -1,9 +1,9 @@
 name: Auto Update Dependencies
 
-on:
-  schedule:
-    - cron: '0 3 * * 1' # 每周一凌晨 3 点执行（UTC 时间）
-  workflow_dispatch: # 允许手动触发
+# on:
+#   schedule:
+#     - cron: '0 3 * * 1' # 每周一凌晨 3 点执行（UTC 时间）
+#   workflow_dispatch: # 允许手动触发
 
 permissions:
   contents: write
