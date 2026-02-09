@@ -65,6 +65,13 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
+    '/css/transition-behavior': RouteRecordInfo<
+      '/css/transition-behavior',
+      '/css/transition-behavior',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
     '/ts/array/index01': RouteRecordInfo<
       '/ts/array/index01',
       '/ts/array/index01',
@@ -167,6 +174,12 @@ declare module 'vue-router/auto-routes' {
     'src/pages/css/transition.vue': {
       routes:
         | '/css/transition'
+      views:
+        | never
+    }
+    'src/pages/css/transition-behavior.vue': {
+      routes:
+        | '/css/transition-behavior'
       views:
         | never
     }
