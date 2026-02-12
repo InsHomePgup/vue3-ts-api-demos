@@ -37,6 +37,13 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
+    '/css/bfc-margin': RouteRecordInfo<
+      '/css/bfc-margin',
+      '/css/bfc-margin',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
     '/css/chat': RouteRecordInfo<
       '/css/chat',
       '/css/chat',
@@ -54,6 +61,13 @@ declare module 'vue-router/auto-routes' {
     '/css/resp': RouteRecordInfo<
       '/css/resp',
       '/css/resp',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/css/transform': RouteRecordInfo<
+      '/css/transform',
+      '/css/transform',
       Record<never, never>,
       Record<never, never>,
       | never
@@ -153,6 +167,12 @@ declare module 'vue-router/auto-routes' {
       views:
         | never
     }
+    'src/pages/css/bfc-margin.vue': {
+      routes:
+        | '/css/bfc-margin'
+      views:
+        | never
+    }
     'src/pages/css/chat.vue': {
       routes:
         | '/css/chat'
@@ -168,6 +188,12 @@ declare module 'vue-router/auto-routes' {
     'src/pages/css/resp.vue': {
       routes:
         | '/css/resp'
+      views:
+        | never
+    }
+    'src/pages/css/transform.vue': {
+      routes:
+        | '/css/transform'
       views:
         | never
     }
