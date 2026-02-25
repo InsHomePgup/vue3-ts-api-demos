@@ -75,6 +75,13 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
+    '/css/Grid/02': RouteRecordInfo<
+      '/css/Grid/02',
+      '/css/Grid/02',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
     '/css/resp': RouteRecordInfo<
       '/css/resp',
       '/css/resp',
@@ -99,6 +106,13 @@ declare module 'vue-router/auto-routes' {
     '/css/transition-behavior': RouteRecordInfo<
       '/css/transition-behavior',
       '/css/transition-behavior',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/template/base': RouteRecordInfo<
+      '/template/base',
+      '/template/base',
       Record<never, never>,
       Record<never, never>,
       | never
@@ -214,6 +228,12 @@ declare module 'vue-router/auto-routes' {
       views:
         | never
     }
+    'src/pages/css/Grid/02.vue': {
+      routes:
+        | '/css/Grid/02'
+      views:
+        | never
+    }
     'src/pages/css/resp.vue': {
       routes:
         | '/css/resp'
@@ -235,6 +255,12 @@ declare module 'vue-router/auto-routes' {
     'src/pages/css/transition-behavior.vue': {
       routes:
         | '/css/transition-behavior'
+      views:
+        | never
+    }
+    'src/pages/template/base.vue': {
+      routes:
+        | '/template/base'
       views:
         | never
     }

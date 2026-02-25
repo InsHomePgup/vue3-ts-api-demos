@@ -1,7 +1,5 @@
 <template>
-  <div class="container">
-    <h1>CSS Grid Layout Demo</h1>
-    
+  <div class="container-wrapper">
     <div class="grid-container">
       <div class="item item-1">Header</div>
       <div class="item item-2">Sidebar</div>
@@ -16,9 +14,10 @@
 </script>
 
 <style scoped>
-.container {
-  padding: 20px;
+.container-wrapper {
   font-family: sans-serif;
+  height: 100vh;
+  width: 100vw;
 }
 
 .grid-container {
@@ -30,7 +29,7 @@
     "sidebar main"
     "footer footer";
   gap: 10px;
-  height: 500px;
+  height: 100vh;
   background-color: #f0f0f0;
   padding: 10px;
 }
