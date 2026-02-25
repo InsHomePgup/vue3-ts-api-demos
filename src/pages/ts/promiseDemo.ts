@@ -165,14 +165,18 @@ class MyPromise {
               this.resolvePromise(promise, y, resolve, reject)
             },
             (r) => {
-              if (called) { return }
+              if (called) {
+                return
+              }
               called = true
               reject(r)
             },
           )
         }
         catch (error) {
-          if (called) { return }
+          if (called) {
+            return
+          }
           reject(error)
         }
       }

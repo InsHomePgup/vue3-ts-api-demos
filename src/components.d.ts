@@ -12,7 +12,6 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
-    Button: typeof import('./components/Button.tsx')['default']
     Card02: typeof import('./components/Card02.vue')['default']
     InputCard: typeof import('./components/InputCard.vue')['default']
     LevelCard: typeof import('./components/LevelCard.vue')['default']
@@ -25,7 +24,6 @@ declare module 'vue' {
 
 // For TSX support
 declare global {
-  const Button: typeof import('./components/Button.tsx')['default']
   const Card02: typeof import('./components/Card02.vue')['default']
   const InputCard: typeof import('./components/InputCard.vue')['default']
   const LevelCard: typeof import('./components/LevelCard.vue')['default']

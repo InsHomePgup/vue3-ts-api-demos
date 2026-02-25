@@ -44,8 +44,12 @@
         <h3>3D Rotate</h3>
         <p>rotateY(180deg)</p>
         <div class="demo-box rotate-3d-box">
-            <div class="face front">Front</div>
-            <div class="face back">Back</div>
+          <div class="face front">
+            Front
+          </div>
+          <div class="face back">
+            Back
+          </div>
         </div>
       </div>
     </div>
@@ -108,7 +112,7 @@
   justify-content: center;
   color: white;
   font-weight: bold;
-  
+
   &::after {
     content: 'Box';
   }
@@ -144,7 +148,7 @@
   perspective: 1000px; /* Enable 3D space */
   transform-style: preserve-3d; /* Children preserve 3D position */
   position: relative;
-  
+
   &::after {
     content: none;
   }

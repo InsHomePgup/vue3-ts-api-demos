@@ -1,19 +1,19 @@
 <template>
-    <div class="container">
-        <h3>Position Transition Demo</h3>
-        <p>Click the button to animate the box position.</p>
-        
-        <div class="position-relative demo-area">
-            <div 
-                class="box position-absolute"
-                :class="{ 'moved': isMoved }"
-            ></div>
-        </div>
+  <div class="container">
+    <h3>Position Transition Demo</h3>
+    <p>Click the button to animate the box position.</p>
 
-        <button @click="isMoved = !isMoved" class="btn">
-            {{ isMoved ? 'Reset' : 'Move' }}
-        </button>
+    <div class="position-relative demo-area">
+      <div
+        class="box position-absolute"
+        :class="{ moved: isMoved }"
+      ></div>
     </div>
+
+    <button class="btn" @click="isMoved = !isMoved">
+      {{ isMoved ? 'Reset' : 'Move' }}
+    </button>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -42,14 +42,14 @@ const isMoved = ref(false)
     height: 60px;
     background-color: #3b82f6;
     border-radius: 8px;
-    
+
     /* Initial Position */
     top: 20px;
     left: 20px;
-    
+
     /* Transition Property */
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    
+
     /* Ensure position-absolute is effective if class not available */
     position: absolute;
     display: flex;

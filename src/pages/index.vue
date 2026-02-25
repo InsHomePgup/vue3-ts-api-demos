@@ -4,7 +4,9 @@
       <h1>Demo Pages Index</h1>
       <div class="counter-demo">
         <span>Counter: {{ countStore.count }}</span>
-        <button @click="countStore.increment" class="btn">+</button>
+        <button class="btn" @click="countStore.increment">
+          +
+        </button>
       </div>
     </header>
 
@@ -19,20 +21,20 @@
 </template>
 
 <script setup lang="ts">
-import { useCounterStore } from '@/stores/counter'
 import { computed } from 'vue'
 import { useRouter } from 'vue-router'
+import { useCounterStore } from '@/stores/counter'
 
 const countStore = useCounterStore()
 const router = useRouter()
 
 const availableRoutes = computed(() => {
   return router.getRoutes()
-    .filter(route => 
+    .filter(route =>
       // Filter out the home page ("/") and internal routes
-      route.path !== '/' && 
-      !route.path.includes(':') && // Exclude dynamic routes if needed, or keep them
-      !route.redirect // Exclude redirect routes
+      route.path !== '/'
+      && !route.path.includes(':') // Exclude dynamic routes if needed, or keep them
+      && !route.redirect, // Exclude redirect routes
     )
     .sort((a, b) => a.path.localeCompare(b.path))
 })
@@ -68,7 +70,7 @@ const availableRoutes = computed(() => {
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  
+
   &:hover {
     background-color: #2563eb;
   }
@@ -85,7 +87,7 @@ const availableRoutes = computed(() => {
   border: 1px solid #e5e7eb;
   border-radius: 8px;
   transition: all 0.2s;
-  
+
   &:hover {
     border-color: #3b82f6;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
@@ -100,7 +102,7 @@ const availableRoutes = computed(() => {
   text-decoration: none;
   font-weight: 500;
   word-break: break-all;
-  
+
   &:hover {
     color: #2563eb;
   }

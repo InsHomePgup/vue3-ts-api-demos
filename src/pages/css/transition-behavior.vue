@@ -7,10 +7,10 @@
     <div class="demo-section">
       <h3>1. Normal (Default)</h3>
       <p>
-        Standard transition on <code>display</code>. When hiding, it disappears immediately. 
+        Standard transition on <code>display</code>. When hiding, it disappears immediately.
         When showing, it appears immediately (no fade-in).
       </p>
-      <button @click="showNormal = !showNormal" class="btn">
+      <button class="btn" @click="showNormal = !showNormal">
         {{ showNormal ? 'Hide' : 'Show' }}
       </button>
       <div class="box normal-box" :class="{ hidden: !showNormal }">
@@ -22,11 +22,11 @@
     <div class="demo-section">
       <h3>2. Allow Discrete</h3>
       <p>
-        Using <code>transition-behavior: allow-discrete</code>. 
+        Using <code>transition-behavior: allow-discrete</code>.
         The browser waits for the opacity transition to finish before applying <code>display: none</code>.
         It also supports entry animations using <code>@starting-style</code>.
       </p>
-      <button @click="showDiscrete = !showDiscrete" class="btn">
+      <button class="btn" @click="showDiscrete = !showDiscrete">
         {{ showDiscrete ? 'Hide' : 'Show' }}
       </button>
       <div class="box discrete-box" :class="{ hidden: !showDiscrete }">
@@ -106,8 +106,8 @@ code {
   font-size: 1.2rem;
 }
 
-/* 
-  Case 1: Normal Behavior 
+/*
+  Case 1: Normal Behavior
   Even though we specify transition for opacity and display,
   display is not an interpolable property by default.
   So it snaps to 'none' instantly when class is added, hiding the element immediately.
@@ -115,7 +115,7 @@ code {
 .normal-box {
   opacity: 1;
   display: flex;
-  transition: opacity 1s, display 1s; 
+  transition: opacity 1s, display 1s;
 }
 
 .normal-box.hidden {
@@ -123,15 +123,15 @@ code {
   display: none;
 }
 
-/* 
-  Case 2: Allow Discrete 
+/*
+  Case 2: Allow Discrete
   We enable discrete transitions for display.
 */
 .discrete-box {
   opacity: 1;
   display: flex;
-  /* 
-    Shorthand syntax: property duration easing behavior 
+  /*
+    Shorthand syntax: property duration easing behavior
     OR
     transition-property: display, opacity;
     transition-duration: 1s;
@@ -140,7 +140,7 @@ code {
   transition: opacity 1s, display 1s allow-discrete;
 }
 
-/* 
+/*
   @starting-style allows the element to transition FROM these values
   when it is first rendered (switching from display: none).
 */

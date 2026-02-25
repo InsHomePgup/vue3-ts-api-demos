@@ -7,11 +7,11 @@ import AutoImport from 'unplugin-auto-import/vite'
 
 import Components from 'unplugin-vue-components/vite'
 
-import VueRouter from 'unplugin-vue-router/vite'
-
 import { defineConfig } from 'vite'
+
 import { consoleBuildInfo } from 'vite-plugin-build-console'
 import vueDevTools from 'vite-plugin-vue-devtools'
+import VueRouter from 'vue-router/vite'
 
 const root: string = process.cwd()
 
@@ -26,7 +26,9 @@ export default defineConfig({
     extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json', '.vue'],
   },
   plugins: [
-    VueRouter(),
+    VueRouter({
+      dts: 'src/typed-router.d.ts',
+    }),
     vue(),
     vueJsx(),
     Components({
@@ -62,8 +64,8 @@ export default defineConfig({
             // named imports
             'AxiosInstance',
             'AxiosRequestConfig',
-            'AxiosResponse'
-          ]
+            'AxiosResponse',
+          ],
         },
         {
           pinia: ['useCounterStore'],

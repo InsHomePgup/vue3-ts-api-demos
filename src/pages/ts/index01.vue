@@ -39,7 +39,7 @@ const userBasicInfo: UserBasicInfo = {
 }
 
 // Partial<T> - 将所有属性变为可选
-  type PartialUser = Partial<User> // 所有属性变为可选
+type PartialUser = Partial<User> // 所有属性变为可选
 
 // Required<T> - 将所有属性变为必选
 type RequiredUser = Required<PartialUser> // 还原为必选
@@ -48,7 +48,7 @@ type RequiredUser = Required<PartialUser> // 还原为必选
 type ReadonlyUser = Readonly<User>
 
 // Pick<T, K> - 从类型中选择部分属性
-  type UserNameAndAge = Pick<User, 'name' | 'age'>
+type UserNameAndAge = Pick<User, 'name' | 'age'>
 
 // Omit<T, K> - 从类型中排除部分属性
 type UserWithoutEmail = Omit<User, 'email'>
