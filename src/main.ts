@@ -4,6 +4,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import { routes } from 'vue-router/auto-routes'
 import { pinia } from '@/stores/index.js'
 import App from './App.vue'
+import '@unocss/reset/tailwind.css'
 import 'virtual:uno.css'
 
 const app = createApp(App)

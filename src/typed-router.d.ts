@@ -61,6 +61,20 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
+    '/css/grid': RouteRecordInfo<
+      '/css/grid',
+      '/css/grid',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/css/Grid/01': RouteRecordInfo<
+      '/css/Grid/01',
+      '/css/Grid/01',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
     '/css/resp': RouteRecordInfo<
       '/css/resp',
       '/css/resp',
@@ -185,6 +199,18 @@ declare module 'vue-router/auto-routes' {
     'src/pages/css/flex.vue': {
       routes:
         | '/css/flex'
+      views:
+        | never
+    }
+    'src/pages/css/grid.vue': {
+      routes:
+        | '/css/grid'
+      views:
+        | never
+    }
+    'src/pages/css/Grid/01.vue': {
+      routes:
+        | '/css/Grid/01'
       views:
         | never
     }

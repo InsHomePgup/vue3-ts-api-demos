@@ -1,0 +1,68 @@
+<template>
+  <div class="container">
+    <h1>CSS Grid Layout Demo</h1>
+    
+    <div class="grid-container">
+      <div class="item item-1">Header</div>
+      <div class="item item-2">Sidebar</div>
+      <div class="item item-3">Main Content</div>
+      <div class="item item-4">Footer</div>
+    </div>
+  </div>
+</template>
+
+<script setup lang="ts">
+// No script logic needed for this simple demo
+</script>
+
+<style scoped>
+.container {
+  padding: 20px;
+  font-family: sans-serif;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: 60px 1fr 60px;
+  grid-template-areas: 
+    "header header"
+    "sidebar main"
+    "footer footer";
+  gap: 10px;
+  height: 500px;
+  background-color: #f0f0f0;
+  padding: 10px;
+}
+
+.item {
+  background-color: #3b82f6;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  border-radius: 4px;
+}
+
+.item-1 {
+  grid-area: header;
+  background-color: #ef4444;
+}
+
+.item-2 {
+  grid-area: sidebar;
+  background-color: #10b981;
+}
+
+.item-3 {
+  grid-area: main;
+  background-color: #3b82f6;
+}
+
+.item-4 {
+  grid-area: footer;
+  background-color: #f59e0b;
+}
+</style>
