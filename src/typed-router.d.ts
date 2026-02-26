@@ -40,6 +40,13 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
+    '/css/animate': RouteRecordInfo<
+      '/css/animate',
+      '/css/animate',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
     '/css/bfc-margin': RouteRecordInfo<
       '/css/bfc-margin',
       '/css/bfc-margin',
@@ -110,6 +117,13 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
+    '/html/01-tag': RouteRecordInfo<
+      '/html/01-tag',
+      '/html/01-tag',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
     '/template/base': RouteRecordInfo<
       '/template/base',
       '/template/base',
@@ -173,6 +187,13 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
+    '/vue/03-transition': RouteRecordInfo<
+      '/vue/03-transition',
+      '/vue/03-transition',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
   }
 
   /**
@@ -195,6 +216,12 @@ declare module 'vue-router/auto-routes' {
     'src/pages/axios/axios01.vue': {
       routes:
         | '/axios/axios01'
+      views:
+        | never
+    }
+    'src/pages/css/animate.vue': {
+      routes:
+        | '/css/animate'
       views:
         | never
     }
@@ -258,6 +285,12 @@ declare module 'vue-router/auto-routes' {
       views:
         | never
     }
+    'src/pages/html/01-tag.vue': {
+      routes:
+        | '/html/01-tag'
+      views:
+        | never
+    }
     'src/pages/template/base.vue': {
       routes:
         | '/template/base'
@@ -309,6 +342,12 @@ declare module 'vue-router/auto-routes' {
     'src/pages/vue/02.vue': {
       routes:
         | '/vue/02'
+      views:
+        | never
+    }
+    'src/pages/vue/03-transition.vue': {
+      routes:
+        | '/vue/03-transition'
       views:
         | never
     }
