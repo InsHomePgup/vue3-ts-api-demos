@@ -47,9 +47,23 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
+    '/css/background': RouteRecordInfo<
+      '/css/background',
+      '/css/background',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
     '/css/bfc-margin': RouteRecordInfo<
       '/css/bfc-margin',
       '/css/bfc-margin',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/css/border-radius': RouteRecordInfo<
+      '/css/border-radius',
+      '/css/border-radius',
       Record<never, never>,
       Record<never, never>,
       | never
@@ -225,9 +239,21 @@ declare module 'vue-router/auto-routes' {
       views:
         | never
     }
+    'src/pages/css/background.vue': {
+      routes:
+        | '/css/background'
+      views:
+        | never
+    }
     'src/pages/css/bfc-margin.vue': {
       routes:
         | '/css/bfc-margin'
+      views:
+        | never
+    }
+    'src/pages/css/border-radius.vue': {
+      routes:
+        | '/css/border-radius'
       views:
         | never
     }
