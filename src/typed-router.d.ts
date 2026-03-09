@@ -33,6 +33,13 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
+    '/apply/grid': RouteRecordInfo<
+      '/apply/grid',
+      '/apply/grid',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
     '/axios/axios01': RouteRecordInfo<
       '/axios/axios01',
       '/axios/axios01',
@@ -224,6 +231,12 @@ declare module 'vue-router/auto-routes' {
     'src/pages/index.vue': {
       routes:
         | '/'
+      views:
+        | never
+    }
+    'src/pages/apply/grid.vue': {
+      routes:
+        | '/apply/grid'
       views:
         | never
     }
