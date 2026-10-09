@@ -26,7 +26,8 @@
     </button>
 
     <h3>泛型组件 TypedList</h3>
-    <!-- T 根据 items 推断为 User，onPick 的参数和插槽里的 item 都是 User -->
+    <!-- T 根据 items 推断为 User，onPick 的参数和插槽里的 item 都是 User
+         T is inferred as User from items; both the onPick param and the slot's item are User -->
     <TypedList :items="users" @select="onPick">
       <template #default="{ item }">
         {{ item.name }}（{{ item.age ?? '未知' }}）
@@ -54,6 +55,7 @@ const selectedId = ref<number | null>(null)
 const picked = ref<User | null>(null)
 
 // 事件处理函数的参数类型，来自子组件 defineEmits 的声明
+// Handler param types come from the child's defineEmits declaration
 function onSelect(id: number): void {
   selectedId.value = id
 }
@@ -67,6 +69,7 @@ function onPick(item: User): void {
 }
 
 // 拿到子组件实例：InstanceType<typeof 组件> 带有 defineExpose 暴露的方法
+// Get the child instance: InstanceType<typeof Component> includes methods exposed via defineExpose
 const cardRef = useTemplateRef<InstanceType<typeof TypedUserCard>>('card')
 
 function focusCard(): void {

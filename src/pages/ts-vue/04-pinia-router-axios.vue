@@ -49,6 +49,7 @@ import { useTodoStore } from '@/stores/todo'
 // ---------- Pinia ----------
 const store = useTodoStore()
 // 状态和 getter 要用 storeToRefs 才能解构且保持响应式；action 直接解构即可
+// State and getters need storeToRefs to be destructured while staying reactive; actions can be destructured directly
 const { todos, doneCount } = storeToRefs(store)
 const { add, toggle } = store
 
@@ -65,9 +66,10 @@ const route = useRoute()
 const router = useRouter()
 
 // route.query 的值可能是 string | string[] | null，要先收窄
+// route.query values may be string | string[] | null; narrow first
 const tab = computed(() => {
   // eslint-disable-next-line dot-notation
-  const value = route.query['tab'] // noPropertyAccessFromIndexSignature 要求索引签名属性用方括号
+  const value = route.query['tab'] // noPropertyAccessFromIndexSignature 要求索引签名属性用方括号 | noPropertyAccessFromIndexSignature requires bracket access for index-signature properties
   return typeof value === 'string' ? value : '无'
 })
 
@@ -76,12 +78,14 @@ function goToTab(name: 'a' | 'b'): void {
 }
 
 // 开启类型化路由后（typed-router.d.ts），也可以用 router.push({ name: '/ts-vue/01-props-emits' })，路由名有提示
+// With typed routes enabled (typed-router.d.ts), you can also use router.push({ name: '/ts-vue/01-props-emits' }) with route-name hints
 function goToProps(): void {
   router.push('/ts-vue/01-props-emits')
 }
 
 // ---------- Axios ----------
 // getUsers 内部用 request<User[]> 解包了统一响应，这里直接拿到 User[]
+// getUsers unwraps the unified response via request<User[]> internally, so User[] is obtained directly here
 const users = ref<User[]>([])
 async function load(): Promise<void> {
   users.value = await getUsers()

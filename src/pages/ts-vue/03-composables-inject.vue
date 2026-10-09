@@ -34,9 +34,11 @@ import { useAsyncData } from '@/composables/useAsyncData'
 import { useToggle } from '@/composables/useToggle'
 
 // 1. 元组解构：open 是 Ref<boolean>，toggleOpen 是函数
+// 1. Tuple destructuring: open is Ref<boolean>, toggleOpen is a function
 const [open, toggleOpen] = useToggle()
 
 // 2. T 由 fetcher 的返回值推断为 User[]，所以 data 是 Ref<User[] | null>
+// 2. T is inferred as User[] from the fetcher's return value, so data is Ref<User[] | null>
 const { data, error, loading, execute } = useAsyncData(
   () => new Promise<User[]>((resolve) => {
     setTimeout(resolve, 500, [{ id: 1, name: '张三' }, { id: 2, name: '李四' }])
@@ -44,6 +46,7 @@ const { data, error, loading, execute } = useAsyncData(
 )
 
 // 3. provide 的值必须符合 ThemeKey 绑定的 ThemeContext，写错会直接报错
+// 3. The provided value must match the ThemeContext bound to ThemeKey; mistakes error out immediately
 const theme = ref<Theme>('light')
 provide(ThemeKey, {
   theme,
