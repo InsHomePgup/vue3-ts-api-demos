@@ -47,7 +47,7 @@ const eslintObj = antfu(
       'src/vite-env.d.ts',
       'commitlint.config.ts',
       'commitlint.config.js',
-      '*.md',
+      '**/*.md',
     ],
   },
   {

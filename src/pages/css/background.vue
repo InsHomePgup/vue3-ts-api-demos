@@ -53,22 +53,22 @@
       <div class="grid">
         <div class="card">
           <h4>Top Left (Default)</h4>
-          <div class="demo-box bg-image bg-no-repeat bg-pos-tl"></div>
+          <div class="demo-box bg-image bg-pos-tl bg-no-repeat"></div>
           <p>background-position: 0 0;</p>
         </div>
         <div class="card">
           <h4>Center</h4>
-          <div class="demo-box bg-image bg-no-repeat bg-pos-center"></div>
+          <div class="demo-box bg-image bg-pos-center bg-no-repeat"></div>
           <p>background-position: center;</p>
         </div>
         <div class="card">
           <h4>Bottom Right</h4>
-          <div class="demo-box bg-image bg-no-repeat bg-pos-br"></div>
+          <div class="demo-box bg-image bg-pos-br bg-no-repeat"></div>
           <p>background-position: bottom right;</p>
         </div>
         <div class="card">
           <h4>Percentage (20% 80%)</h4>
-          <div class="demo-box bg-image bg-no-repeat bg-pos-percent"></div>
+          <div class="demo-box bg-image bg-pos-percent bg-no-repeat"></div>
           <p>background-position: 20% 80%;</p>
         </div>
       </div>
@@ -85,7 +85,7 @@
         </div>
         <div class="card">
           <h4>No Repeat</h4>
-          <div class="demo-box bg-tiny bg-no-repeat bg-pos-center"></div>
+          <div class="demo-box bg-tiny bg-pos-center bg-no-repeat"></div>
           <p>background-repeat: no-repeat;</p>
         </div>
         <div class="card">
@@ -118,21 +118,27 @@
         <div class="card">
           <h4>Scroll (Default)</h4>
           <div class="demo-box scroll-box bg-attach-scroll">
-            <div class="content">Scroll content to see background scroll with it.</div>
+            <div class="content">
+              Scroll content to see background scroll with it.
+            </div>
           </div>
           <p>background-attachment: scroll;</p>
         </div>
         <div class="card">
           <h4>Fixed</h4>
           <div class="demo-box scroll-box bg-attach-fixed">
-             <div class="content">Scroll content. Background stays fixed relative to viewport.</div>
+            <div class="content">
+              Scroll content. Background stays fixed relative to viewport.
+            </div>
           </div>
           <p>background-attachment: fixed;</p>
         </div>
         <div class="card">
           <h4>Local</h4>
           <div class="demo-box scroll-box bg-attach-local">
-             <div class="content">Scroll content. Background scrolls with element's content.</div>
+            <div class="content">
+              Scroll content. Background scrolls with element's content.
+            </div>
           </div>
           <p>background-attachment: local;</p>
         </div>
@@ -160,7 +166,9 @@
         </div>
         <div class="card">
           <h4>Text</h4>
-          <div class="demo-box bg-clip-text">Background Clip Text</div>
+          <div class="demo-box bg-clip-text">
+            Background Clip Text
+          </div>
           <p>background-clip: text;</p>
         </div>
       </div>
@@ -172,17 +180,17 @@
       <div class="grid">
         <div class="card">
           <h4>Border Box</h4>
-          <div class="demo-box border-dashed bg-origin-border bg-no-repeat bg-tiny"></div>
+          <div class="demo-box bg-tiny border-dashed bg-no-repeat bg-origin-border"></div>
           <p>background-origin: border-box;</p>
         </div>
         <div class="card">
           <h4>Padding Box (Default)</h4>
-          <div class="demo-box border-dashed bg-origin-padding bg-no-repeat bg-tiny"></div>
+          <div class="demo-box bg-tiny border-dashed bg-no-repeat bg-origin-padding"></div>
           <p>background-origin: padding-box;</p>
         </div>
         <div class="card">
           <h4>Content Box</h4>
-          <div class="demo-box border-dashed bg-origin-content bg-no-repeat bg-tiny">
+          <div class="demo-box bg-tiny border-dashed bg-no-repeat bg-origin-content">
             Content
           </div>
           <p>background-origin: content-box;</p>
@@ -209,7 +217,7 @@
           <div class="demo-box bg-conic"></div>
           <p>conic-gradient(...)</p>
         </div>
-         <div class="card">
+        <div class="card">
           <h4>Repeating Linear</h4>
           <div class="demo-box bg-repeat-linear"></div>
           <p>repeating-linear-gradient(...)</p>
@@ -228,7 +236,6 @@
         </div>
       </div>
     </div>
-
   </div>
 </template>
 
@@ -303,7 +310,7 @@ h3 {
 }
 
 /* --- Common Background Image (Placeholder) --- */
-/* Using a CSS pattern or gradient as 'image' to avoid external dependencies if possible, 
+/* Using a CSS pattern or gradient as 'image' to avoid external dependencies if possible,
    but for 'image' demos, let's use a reliable placeholder service or a generated svg data uri */
 $bg-url: url('https://picsum.photos/id/1018/300/200');
 $bg-tiny-url: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIiBmaWxsPSJub25lIiBzdHJva2U9IiMzYjgyZjYiIHN0cm9rZS13aWR0aD0iMiI+PGNpcmNsZSBjeD0iMTAiIGN5PSIxMCIgcj0iNSIvPjwvc3ZnPg==');
@@ -346,7 +353,7 @@ $bg-tiny-url: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5
   overflow-y: scroll;
   background-image: $bg-url;
   /* Make sure background is large enough to notice scrolling */
-  background-size: cover; 
+  background-size: cover;
 }
 .bg-attach-scroll { background-attachment: scroll; }
 .bg-attach-fixed { background-attachment: fixed; }
@@ -406,11 +413,11 @@ $bg-tiny-url: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5
   /* Layer 1: Small circle (top)
      Layer 2: Linear gradient (middle)
      Layer 3: Solid color/image (bottom) */
-  background-image: 
+  background-image:
     url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MCIgaGVpZ2h0PSI1MCI+PGNpcmNsZSBjeD0iMjUiIGN5PSIyNSIgcj0iMjAiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC44KSIvPjwvc3ZnPg=='),
     linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.5)),
     $bg-url;
-  
+
   background-position: center, center, center;
   background-repeat: no-repeat, no-repeat, no-repeat;
   background-size: 50px 50px, cover, cover;

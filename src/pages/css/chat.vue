@@ -1,49 +1,49 @@
 <template>
-  <div class="flex border flex-col border-gray-200 rounded-lg max-w-800px mx-auto overflow-hidden shadow-md h-screen">
-    <div class="p-4 bg-blue-500 text-white text-center">
-      <h2 class="font-medium text-xl">
+  <div class="mx-auto h-screen max-w-800px flex flex-col overflow-hidden border border-gray-200 rounded-lg shadow-md">
+    <div class="bg-blue-500 p-4 text-center text-white">
+      <h2 class="text-xl font-medium">
         聊天记录
       </h2>
     </div>
 
-    <div class="p-4 flex-1 bg-gray-100 overflow-y-auto">
+    <div class="flex-1 overflow-y-auto bg-gray-100 p-4">
       <template v-for="(message, index) in messages" :key="index">
         <!-- 时间戳分隔线 -->
-        <div v-if="shouldShowTimestamp(index)" class="flex justify-center my-4">
-          <div class="py-1 text-gray-600 bg-gray-200 text-xs px-3 rounded-full">
+        <div v-if="shouldShowTimestamp(index)" class="my-4 flex justify-center">
+          <div class="rounded-full bg-gray-200 px-3 py-1 text-xs text-gray-600">
             {{ formatTimestamp(message.time) }}
           </div>
         </div>
 
         <!-- 消息气泡 -->
         <div
-          class="flex items-center mb-5"
+          class="mb-5 flex items-center"
           :class="[
             message.isSelf ? 'flex-row-reverse' : 'flex-row',
           ]"
         >
           <!-- 时间戳 - 放在头像左边 -->
-          <div class="text-xs text-gray-500 mx-2">
+          <div class="mx-2 text-xs text-gray-500">
             {{ formatMessageTime(message.time) }}
           </div>
 
           <!-- 头像 -->
-          <div class="rounded-full overflow-hidden mx-2 w-10 h-10 flex-shrink-0">
-            <img :src="message.avatar" alt="头像" class="w-full h-full object-cover">
+          <div class="mx-2 h-10 w-10 flex-shrink-0 overflow-hidden rounded-full">
+            <img :src="message.avatar" alt="头像" class="h-full w-full object-cover">
           </div>
 
           <!-- 消息内容 -->
           <div
-            class="flex flex-col max-w-70%"
+            class="max-w-70% flex flex-col"
             :class="[
               message.isSelf ? 'items-end' : 'items-start',
             ]"
           >
-            <div class="text-sm mb-1 font-bold">
+            <div class="mb-1 text-sm font-bold">
               {{ message.sender }}
             </div>
             <div
-              class="rounded-lg p-3 max-w-full break-words"
+              class="max-w-full break-words rounded-lg p-3"
               :class="[
                 message.isSelf ? 'bg-blue-500 text-white rounded-tr-none' : 'bg-white rounded-tl-none',
               ]"

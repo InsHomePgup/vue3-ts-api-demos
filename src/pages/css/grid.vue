@@ -2,10 +2,18 @@
   <div class="container-wrapper">
     <!-- grid 布局常见的中台 -->
     <div class="grid-container">
-      <div class="item item-1">Header</div>
-      <div class="item item-2">Sidebar</div>
-      <div class="item item-3">Main Content</div>
-      <div class="item item-4">Footer</div>
+      <div class="item item-1">
+        Header
+      </div>
+      <div class="item item-2">
+        Sidebar
+      </div>
+      <div class="item item-3">
+        Main Content
+      </div>
+      <div class="item item-4">
+        Footer
+      </div>
     </div>
   </div>
 </template>

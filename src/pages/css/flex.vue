@@ -1,7 +1,7 @@
 <template>
   <div>
     <div>123</div>
-    <div v-for="(item, index) in list" :key="index" class="flex flex-col w-100">
+    <div v-for="(item, index) in list" :key="index" class="w-100 flex flex-col">
       <div :class="item.isSelf ? 'self-end' : 'self-start'">
         {{ item.msg }}
       </div>

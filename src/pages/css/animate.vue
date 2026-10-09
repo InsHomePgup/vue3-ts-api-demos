@@ -1,20 +1,24 @@
 <template>
-  <div class="container p-10 max-w-4xl mx-auto">
-    <h1 class="text-3xl font-bold mb-8">UnoCSS Preset Animations Demo</h1>
-    
+  <div class="container mx-auto max-w-4xl p-10">
+    <h1 class="mb-8 text-3xl font-bold">
+      UnoCSS Preset Animations Demo
+    </h1>
+
     <p class="mb-8 text-gray-600">
       Using <code>unocss-preset-animations</code> (a port of tailwindcss-animate).
       This allows composable animations!
     </p>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
       <!-- 1. Fade In -->
       <div class="demo-card">
-        <h3 class="font-bold mb-4">Fade In</h3>
+        <h3 class="mb-4 font-bold">
+          Fade In
+        </h3>
         <div class="flex gap-4">
-          <div 
+          <div
             v-if="toggle"
-            class="box animate-in fade-in duration-1000"
+            class="box animate-in duration-1000 fade-in"
           >
             Fade In
           </div>
@@ -23,11 +27,13 @@
 
       <!-- 2. Zoom In -->
       <div class="demo-card">
-        <h3 class="font-bold mb-4">Zoom In</h3>
+        <h3 class="mb-4 font-bold">
+          Zoom In
+        </h3>
         <div class="flex gap-4">
-          <div 
+          <div
             v-if="toggle"
-            class="box animate-in zoom-in duration-500 delay-200"
+            class="box animate-in duration-500 delay-200 zoom-in"
           >
             Zoom In
           </div>
@@ -36,11 +42,13 @@
 
       <!-- 3. Slide In from Bottom -->
       <div class="demo-card">
-        <h3 class="font-bold mb-4">Slide In (Bottom)</h3>
+        <h3 class="mb-4 font-bold">
+          Slide In (Bottom)
+        </h3>
         <div class="flex gap-4">
-          <div 
+          <div
             v-if="toggle"
-            class="box animate-in slide-in-from-bottom-8 fade-in duration-700"
+            class="box animate-in duration-700 fade-in slide-in-from-bottom-8"
           >
             Slide Up
           </div>
@@ -49,10 +57,12 @@
 
       <!-- 4. Spin (Infinite) -->
       <div class="demo-card">
-        <h3 class="font-bold mb-4">Spin (Infinite)</h3>
+        <h3 class="mb-4 font-bold">
+          Spin (Infinite)
+        </h3>
         <div class="flex gap-4">
           <!-- animate-spin is from preset-uno, but composed here -->
-          <div class="box rounded-full animate-spin bg-gradient-to-r from-blue-500 to-purple-500">
+          <div class="box animate-spin rounded-full from-blue-500 to-purple-500 bg-gradient-to-r">
             Wait
           </div>
         </div>
@@ -60,7 +70,9 @@
 
       <!-- 5. Bounce -->
       <div class="demo-card">
-        <h3 class="font-bold mb-4">Bounce</h3>
+        <h3 class="mb-4 font-bold">
+          Bounce
+        </h3>
         <div class="flex gap-4">
           <div class="box animate-bounce">
             Boing
@@ -70,12 +82,16 @@
 
       <!-- 6. Complex Composition -->
       <div class="demo-card">
-        <h3 class="font-bold mb-4">Complex Composition</h3>
-        <p class="text-xs text-gray-500 mb-2">zoom-in + slide-in-from-left + spin-in</p>
+        <h3 class="mb-4 font-bold">
+          Complex Composition
+        </h3>
+        <p class="mb-2 text-xs text-gray-500">
+          zoom-in + slide-in-from-left + spin-in
+        </p>
         <div class="flex gap-4">
-          <div 
+          <div
             v-if="toggle"
-            class="box animate-in zoom-in slide-in-from-left-10 spin-in-90 duration-1000 ease-out"
+            class="box animate-in duration-1000 ease-out zoom-in spin-in-90 slide-in-from-left-10"
           >
             Combo
           </div>
@@ -84,9 +100,9 @@
     </div>
 
     <div class="mt-10 flex justify-center">
-      <button 
+      <button
+        class="rounded bg-blue-600 px-6 py-2 text-white transition hover:bg-blue-700"
         @click="toggle = !toggle"
-        class="px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
       >
         Re-run Animations
       </button>

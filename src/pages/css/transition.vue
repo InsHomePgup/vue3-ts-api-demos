@@ -3,7 +3,7 @@
     <h3>Position Transition Demo</h3>
     <p>Click the button to animate the box position.</p>
 
-    <div class="position-relative demo-area">
+    <div class="demo-area position-relative">
       <div
         class="box position-absolute"
         :class="{ moved: isMoved }"

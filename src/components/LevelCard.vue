@@ -1,12 +1,12 @@
 <template>
-  <div class="border rounded p-4 w-64 min-h-48 bg-white shadow-sm">
-    <div class="flex items-center justify-between mb-4">
+  <div class="min-h-48 w-64 border rounded bg-white p-4 shadow-sm">
+    <div class="mb-4 flex items-center justify-between">
       <h3 class="font-medium">
         {{ title }}
       </h3>
       <button
         :disabled="disabled"
-        class="rounded px-2 py-1 text-sm bg-blue-100 hover:bg-blue-200 disabled:opacity-50"
+        class="rounded bg-blue-100 px-2 py-1 text-sm hover:bg-blue-200 disabled:opacity-50"
         @click="addItem"
       >
         + 添加
@@ -21,19 +21,19 @@
       >
         <template #item="{ element, index }">
           <div
-            class="p-2 mb-1 border-b hover:bg-gray-50 cursor-pointer"
+            class="mb-1 cursor-pointer border-b p-2 hover:bg-gray-50"
           >
-            <div class="flex items-center gap-2 w-full">
+            <div class="w-full flex items-center gap-2">
               <input
                 v-model="element.name"
                 type="text"
-                class="bg-transparent focus:outline-none flex-1"
+                class="flex-1 bg-transparent focus:outline-none"
                 :class="{ 'text-red-500': element.name.trim() === '' }"
                 placeholder="输入选项名称"
                 @blur="validateInput(element)"
               />
               <button
-                class="text-red-400 hover:text-red-600 transition-colors"
+                class="text-red-400 transition-colors hover:text-red-600"
                 @click.stop="removeItem(index)"
               >
                 ×
@@ -62,7 +62,7 @@ const props = defineProps({
   disabled: { type: Boolean, default: false },
 })
 
-const emit = defineEmits(['update:model-value'])
+const emit = defineEmits(['update:modelValue'])
 
 const generateId = () => Math.random().toString(36).substr(2, 9)
 
@@ -79,16 +79,16 @@ function addItem() {
     name: '新选项',
     children: [],
   })
-  emit('update:model-value', newItems)
+  emit('update:modelValue', newItems)
 }
 
 function removeItem(index: number) {
   const newItems = [...props.modelValue]
   newItems.splice(index, 1)
-  emit('update:model-value', newItems)
+  emit('update:modelValue', newItems)
 }
 
 function handleDragEnd(newValue: LevelItem[]) {
-  emit('update:model-value', newValue)
+  emit('update:modelValue', newValue)
 }
 </script>

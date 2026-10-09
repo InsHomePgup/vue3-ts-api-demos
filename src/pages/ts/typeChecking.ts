@@ -1,3 +1,7 @@
+import Person from '../../../person'
+
+const sampleRegex = /regex/
+
 // typeof 和 instanceof 类型检查示例
 
 // 辅助函数：同时显示表达式和结果
@@ -29,7 +33,7 @@ export function checkObjectTypes() {
   logWithExpression('Array.isArray([])', Array.isArray([]))
   logWithExpression('{} instanceof Object', {} instanceof Object)
   logWithExpression('new Date() instanceof Date', new Date() instanceof Date)
-  logWithExpression('/regex/ instanceof RegExp', /regex/ instanceof RegExp)
+  logWithExpression('/regex/ instanceof RegExp', sampleRegex instanceof RegExp)
 }
 
 // 3. 自定义类实例检查
@@ -75,7 +79,7 @@ export function runAllTypeChecks() {
   checkPrimitiveTypes()
   checkObjectTypes()
   checkCustomClassInstances()
-  checkEdgeCases()
+  // checkEdgeCases()
 }
 
 runAllTypeChecks()

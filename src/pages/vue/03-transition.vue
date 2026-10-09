@@ -1,42 +1,48 @@
 <template>
   <div class="container">
     <h1>Vue Transition Demo (UnoCSS Preset)</h1>
-    
+
     <div class="demo-section">
       <h3>1. Basic Fade</h3>
-      <button @click="showFade = !showFade" class="btn">
+      <button class="btn" @click="showFade = !showFade">
         Toggle Fade
       </button>
-      <Transition 
-        enter-active-class="animate-in fade-in duration-500"
-        leave-active-class="animate-out fade-out duration-500"
+      <Transition
+        enterActiveClass="animate-in fade-in duration-500"
+        leaveActiveClass="animate-out fade-out duration-500"
       >
-        <p v-if="showFade" class="box">Hello Fade</p>
+        <p v-if="showFade" class="box">
+          Hello Fade
+        </p>
       </Transition>
     </div>
 
     <div class="demo-section">
       <h3>2. Slide Fade</h3>
-      <button @click="showSlide = !showSlide" class="btn">
+      <button class="btn" @click="showSlide = !showSlide">
         Toggle Slide
       </button>
-      <Transition 
-        enter-active-class="animate-in fade-in slide-in-from-right-8 duration-300 ease-out"
-        leave-active-class="animate-out fade-out slide-out-to-right-8 duration-800 ease-in-out"
+      <Transition
+        enterActiveClass="animate-in fade-in slide-in-from-right-8 duration-300 ease-out"
+        leaveActiveClass="animate-out fade-out slide-out-to-right-8 duration-800 ease-in-out"
       >
-        <p v-if="showSlide" class="box">Hello Slide</p>
+        <p v-if="showSlide" class="box">
+          Hello Slide
+        </p>
       </Transition>
     </div>
 
     <div class="demo-section">
       <h3>3. Zoom (Replacing Bounce)</h3>
-      <p class="text-sm text-gray-500 mb-2">Using Zoom In/Out from preset-animations</p>
-      <button @click="showBounce = !showBounce" class="btn">
+      <p class="mb-2 text-sm text-gray-500">
+        Using Zoom In/Out from preset-animations
+      </p>
+      <button class="btn" @click="showBounce = !showBounce">
         Toggle Zoom
       </button>
-      <Transition 
-        enter-active-class="animate-in zoom-in duration-300"
-        leave-active-class="animate-out zoom-out duration-300"
+      <Transition
+        enterActiveClass="animate-in zoom-in duration-300"
+        leaveActiveClass="animate-out zoom-out duration-300"
       >
         <div v-if="showBounce" class="box text-center">
           Zoom
@@ -47,16 +53,22 @@
     <div class="demo-section">
       <h3>4. List Transition (TransitionGroup)</h3>
       <div class="controls">
-        <button @click="addNumber" class="btn">Add</button>
-        <button @click="removeNumber" class="btn">Remove</button>
-        <button @click="shuffleNumbers" class="btn">Shuffle</button>
+        <button class="btn" @click="addNumber">
+          Add
+        </button>
+        <button class="btn" @click="removeNumber">
+          Remove
+        </button>
+        <button class="btn" @click="shuffleNumbers">
+          Shuffle
+        </button>
       </div>
-      <TransitionGroup 
-        tag="ul" 
+      <TransitionGroup
+        tag="ul"
         class="list-container relative"
-        enter-active-class="animate-in fade-in slide-in-from-bottom-4 duration-500"
-        leave-active-class="animate-out fade-out slide-out-to-bottom-4 duration-500 absolute"
-        move-class="transition-transform duration-500 ease-in-out"
+        enterActiveClass="animate-in fade-in slide-in-from-bottom-4 duration-500"
+        leaveActiveClass="animate-out fade-out slide-out-to-bottom-4 duration-500 absolute"
+        moveClass="transition-transform duration-500 ease-in-out"
       >
         <li v-for="item in items" :key="item" class="list-item">
           {{ item }}
@@ -67,8 +79,8 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
 import { shuffle } from 'lodash-es'
+import { ref } from 'vue'
 
 // 1. Basic Fade
 const showFade = ref(true)
@@ -85,15 +97,15 @@ let nextNum = 6
 
 const randomIndex = () => Math.floor(Math.random() * items.value.length)
 
-const addNumber = () => {
+function addNumber() {
   items.value.splice(randomIndex(), 0, nextNum++)
 }
 
-const removeNumber = () => {
+function removeNumber() {
   items.value.splice(randomIndex(), 1)
 }
 
-const shuffleNumbers = () => {
+function shuffleNumbers() {
   items.value = shuffle(items.value)
 }
 </script>

@@ -1,10 +1,18 @@
 <template>
   <div class="container-wrapper">
     <div class="grid-container">
-        <div class="item item-1">Header</div>
-        <div class="item item-2">Sidebar</div>
-        <div class="item item-3">Main Content</div>
-        <div class="item item-4">Footer</div>
+      <div class="item item-1">
+        Header
+      </div>
+      <div class="item item-2">
+        Sidebar
+      </div>
+      <div class="item item-3">
+        Main Content
+      </div>
+      <div class="item item-4">
+        Footer
+      </div>
     </div>
   </div>
 </template>
@@ -13,7 +21,6 @@
 </script>
 
 <style scoped>
-
 .container-wrapper{
     width: 100vw;
     height: 100vh;
@@ -24,7 +31,7 @@
     gap:20px;
     height: 100vh;
     padding: 10px;
-    grid-template-areas: 
+    grid-template-areas:
     "header header"
     "sidebar main"
     "footer footer";
@@ -61,5 +68,4 @@
   grid-area: footer;
   background-color: #f59e0b;
 }
-
 </style>

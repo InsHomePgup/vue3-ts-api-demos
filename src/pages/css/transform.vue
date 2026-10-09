@@ -3,7 +3,9 @@
     <h2>CSS Transform Comprehensive Demo</h2>
     <p>Hover over the boxes to see the transformations.</p>
 
-    <div class="section-title">2D Transforms</div>
+    <div class="section-title">
+      2D Transforms
+    </div>
     <div class="grid">
       <!-- Translate -->
       <div class="card">
@@ -18,14 +20,14 @@
         <p>scale(1.2)</p>
         <div class="demo-box scale-box"></div>
       </div>
-      
+
       <!-- Scale X Only -->
       <div class="card">
         <h3>Scale X</h3>
         <p>scaleX(1.5)</p>
         <div class="demo-box scale-x-box"></div>
       </div>
-      
+
       <!-- Scale Y Only -->
       <div class="card">
         <h3>Scale Y</h3>
@@ -46,14 +48,14 @@
         <p>skew(20deg, 10deg)</p>
         <div class="demo-box skew-box"></div>
       </div>
-      
+
       <!-- Skew X -->
       <div class="card">
         <h3>Skew X</h3>
         <p>skewX(30deg)</p>
         <div class="demo-box skew-x-box"></div>
       </div>
-      
+
       <!-- Skew Y -->
       <div class="card">
         <h3>Skew Y</h3>
@@ -67,7 +69,7 @@
         <p>matrix(1, -0.3, 0, 1, 0, 0)</p>
         <div class="demo-box matrix-box"></div>
       </div>
-      
+
       <!-- Transform Origin -->
       <div class="card">
         <h3>Transform Origin</h3>
@@ -76,7 +78,9 @@
       </div>
     </div>
 
-    <div class="section-title">3D Transforms & Perspective</div>
+    <div class="section-title">
+      3D Transforms & Perspective
+    </div>
     <div class="grid">
       <!-- Rotate X -->
       <div class="card perspective-container">
@@ -91,7 +95,7 @@
         <p>rotateY(60deg)</p>
         <div class="demo-box rotate-y-box"></div>
       </div>
-      
+
       <!-- Rotate Z -->
       <div class="card perspective-container">
         <h3>Rotate Z</h3>
@@ -105,21 +109,21 @@
         <p>translateZ(50px)</p>
         <div class="demo-box translate-z-box"></div>
       </div>
-      
+
       <!-- Translate Z Negative -->
       <div class="card perspective-container">
         <h3>Translate Z (Negative)</h3>
         <p>translateZ(-50px)</p>
         <div class="demo-box translate-z-neg-box"></div>
       </div>
-      
+
       <!-- Scale 3D -->
       <div class="card perspective-container">
         <h3>Scale 3D</h3>
         <p>scale3d(1, 1, 2) + rotateY</p>
         <div class="demo-box scale-3d-box"></div>
       </div>
-      
+
       <!-- Rotate 3D Vector -->
       <div class="card perspective-container">
         <h3>Rotate 3D (Vector)</h3>
@@ -139,8 +143,12 @@
         <h3>Backface Visibility</h3>
         <p>hidden (left) vs visible (right)</p>
         <div class="demo-box backface-demo-box">
-           <div class="bf-item bf-hidden">Hidden</div>
-           <div class="bf-item bf-visible">Visible</div>
+          <div class="bf-item bf-hidden">
+            Hidden
+          </div>
+          <div class="bf-item bf-visible">
+            Visible
+          </div>
         </div>
       </div>
 
@@ -149,27 +157,37 @@
         <h3>Transform Style</h3>
         <p>flat (left) vs preserve-3d (right)</p>
         <div class="demo-box style-demo-box">
-           <div class="style-wrapper flat-wrapper">
-             <div class="style-child">Flat</div>
-           </div>
-           <div class="style-wrapper preserve-wrapper">
-             <div class="style-child">3D</div>
-           </div>
+          <div class="style-wrapper flat-wrapper">
+            <div class="style-child">
+              Flat
+            </div>
+          </div>
+          <div class="style-wrapper preserve-wrapper">
+            <div class="style-child">
+              3D
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    
-    <div class="section-title">Complex 3D Objects</div>
+
+    <div class="section-title">
+      Complex 3D Objects
+    </div>
     <div class="grid">
       <!-- 3D Card Flip -->
       <div class="card perspective-container">
         <h3>Card Flip</h3>
         <p>rotateY(180deg)</p>
         <div class="scene">
-            <div class="card-3d">
-              <div class="face front">Front</div>
-              <div class="face back">Back</div>
+          <div class="card-3d">
+            <div class="face front">
+              Front
             </div>
+            <div class="face back">
+              Back
+            </div>
+          </div>
         </div>
       </div>
 
@@ -179,12 +197,24 @@
         <p>rotate3d(1, 1, 0, 360deg)</p>
         <div class="scene-cube">
           <div class="cube">
-            <div class="cube-face front">1</div>
-            <div class="cube-face back">2</div>
-            <div class="cube-face right">3</div>
-            <div class="cube-face left">4</div>
-            <div class="cube-face top">5</div>
-            <div class="cube-face bottom">6</div>
+            <div class="cube-face front">
+              1
+            </div>
+            <div class="cube-face back">
+              2
+            </div>
+            <div class="cube-face right">
+              3
+            </div>
+            <div class="cube-face left">
+              4
+            </div>
+            <div class="cube-face top">
+              5
+            </div>
+            <div class="cube-face bottom">
+              6
+            </div>
           </div>
         </div>
       </div>
@@ -229,7 +259,7 @@
   align-items: center;
   box-shadow: 0 1px 2px rgba(0,0,0,0.05);
   min-height: 200px; /* Ensure uniform height */
-  
+
   /* Add perspective for 3D children */
   &.perspective-container {
     perspective: 800px;
@@ -285,11 +315,11 @@
   .scale-box {
     transform: scale(1.2);
   }
-  
+
   .scale-x-box {
     transform: scaleX(1.5);
   }
-  
+
   .scale-y-box {
     transform: scaleY(0.5);
   }
@@ -301,11 +331,11 @@
   .skew-box {
     transform: skew(20deg, 10deg);
   }
-  
+
   .skew-x-box {
     transform: skewX(30deg);
   }
-  
+
   .skew-y-box {
     transform: skewY(30deg);
   }
@@ -328,7 +358,7 @@
   .rotate-y-box {
     transform: rotateY(60deg);
   }
-  
+
   .rotate-z-box {
     transform: rotateZ(60deg);
   }
@@ -336,20 +366,20 @@
   .translate-z-box {
     transform: translateZ(50px);
   }
-  
+
   .translate-z-neg-box {
     transform: translateZ(-50px);
   }
-  
+
   .scale-3d-box {
     /* rotate slightly to see depth/scale Z effect */
-    transform: rotateY(45deg) scale3d(1, 1, 2); 
+    transform: rotateY(45deg) scale3d(1, 1, 2);
   }
-  
+
   .rotate-3d-vector-box {
     transform: rotate3d(1, 1, 1, 45deg);
   }
-  
+
   .perspective-func-box {
     transform: perspective(500px) rotateX(45deg);
   }
@@ -362,7 +392,7 @@
   display: flex; /* Changed from justify-content: space-around only */
   justify-content: space-around;
   width: 100%;
-  
+
   &::after {
     content: none;
   }
@@ -401,7 +431,7 @@
   display: flex;
   justify-content: space-around;
   width: 100%;
-  
+
   &::after {
     content: none;
   }
@@ -437,13 +467,12 @@
   font-size: 0.8rem;
   font-weight: bold;
   /* Child is permanently rotated X */
-  transform: rotateX(60deg); 
+  transform: rotateX(60deg);
 }
 
 .card:hover .style-wrapper {
   transform: rotateY(60deg);
 }
-
 
 /* --- Complex 3D Objects --- */
 
@@ -489,7 +518,6 @@
   transform: rotateY(180deg);
 }
 
-
 /* 3D Cube */
 .scene-cube {
   width: 100px;
@@ -533,5 +561,4 @@
 .cube-face.left   { transform: rotateY(-90deg) translateZ(50px); background: rgba(245, 158, 11, 0.8); }
 .cube-face.top    { transform: rotateX(90deg) translateZ(50px); background: rgba(139, 92, 246, 0.8); }
 .cube-face.bottom { transform: rotateX(-90deg) translateZ(50px); background: rgba(236, 72, 153, 0.8); }
-
 </style>

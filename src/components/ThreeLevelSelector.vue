@@ -1,5 +1,5 @@
 <template>
-  <div class="flex p-4 gap-4">
+  <div class="flex gap-4 p-4">
     <LevelCard
       v-model="level1Data"
       title="一级选项"

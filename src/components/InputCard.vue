@@ -4,7 +4,7 @@
     <div v-if="!data || data.length === 0">
     </div>
     <!-- 递归渲染 -->
-    <div v-else class="flex items-center flex-row">
+    <div v-else class="flex flex-row items-center">
       <div v-for="(item, index) in data" :key="index">
         {{ item.name }}
         <Card02 v-if="item.children" :data="item.children" />
@@ -14,20 +14,15 @@
 </template>
 
 <script setup lang="ts">
-interface inputItem {
+interface InputItem {
   name: string
   id: string
-  children: inputItem[]
+  children?: InputItem[]
 }
 
-interface listDataItem {
-  title: string
-  list: inputItem[]
-}
-interface propType {
-  listData: listDataItem[]
-}
-const props = withDefaults(defineProps<propType>(), {})
+defineProps<{
+  data?: InputItem[]
+}>()
 </script>
 
 <style scoped>

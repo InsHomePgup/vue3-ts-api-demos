@@ -9,7 +9,7 @@ updates:
       timezone: Asia/Shanghai
     open-pull-requests-limit: 10
     commit-message:
-      prefix: 'chore'
+      prefix: chore
       include: scope
     # 把所有更新合并成一个 PR，减少噪音 | Group all updates into one PR to reduce noise
     groups:
