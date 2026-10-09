@@ -192,6 +192,34 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
+    '/ts-vue/01-props-emits': RouteRecordInfo<
+      '/ts-vue/01-props-emits',
+      '/ts-vue/01-props-emits',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/ts-vue/02-reactivity': RouteRecordInfo<
+      '/ts-vue/02-reactivity',
+      '/ts-vue/02-reactivity',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/ts-vue/03-composables-inject': RouteRecordInfo<
+      '/ts-vue/03-composables-inject',
+      '/ts-vue/03-composables-inject',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/ts-vue/04-pinia-router-axios': RouteRecordInfo<
+      '/ts-vue/04-pinia-router-axios',
+      '/ts-vue/04-pinia-router-axios',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
     '/tsx/index01': RouteRecordInfo<
       '/tsx/index01',
       '/tsx/index01',
@@ -412,6 +440,38 @@ declare module 'vue-router/auto-routes' {
     'src/pages/ts/string/index01.vue': {
       routes:
         | '/ts/string/index01'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
+    'src/pages/ts-vue/01-props-emits.vue': {
+      routes:
+        | '/ts-vue/01-props-emits'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
+    'src/pages/ts-vue/02-reactivity.vue': {
+      routes:
+        | '/ts-vue/02-reactivity'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
+    'src/pages/ts-vue/03-composables-inject.vue': {
+      routes:
+        | '/ts-vue/03-composables-inject'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
+    'src/pages/ts-vue/04-pinia-router-axios.vue': {
+      routes:
+        | '/ts-vue/04-pinia-router-axios'
       views:
         | never
       pathParamNames:
