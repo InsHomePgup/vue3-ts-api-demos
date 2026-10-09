@@ -21,7 +21,7 @@ const pathResolve = (path: string): string => resolve(root, path)
 export default defineConfig({
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src'),
+      '@': path.resolve(import.meta.dirname, './src'),
     },
     extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json', '.vue'],
   },
@@ -74,7 +74,7 @@ export default defineConfig({
       dts: 'src/auto-imports.d.ts', // 自动生成 dts 文件
     }),
     UnoCSS(),
-    consoleBuildInfo(),
+    consoleBuildInfo({ zipDir: 'releases' }),
     vueDevTools(),
   ],
   server: {
