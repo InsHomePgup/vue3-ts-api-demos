@@ -28,6 +28,50 @@ function createUser(name: string, age: number = 18) {
   return { name, age }
 }
 
+// 6.1 默认参数 + 可选参数混用
+// 默认参数自带可选性，不能同时写 `?` 和默认值；可选参数 `?` 必须放在必选参数之后
+function createUserWithEmail(name: string, age: number = 18, email?: string) {
+  return { name, age, email }
+}
+
+createUserWithEmail('foo') // age = 18, email = undefined
+createUserWithEmail('foo', undefined, 'a@b.com') // 传 undefined 跳过 age，使用默认值
+
+// 新增参数时：追加到末尾，且必须是可选或带默认值，旧调用不受影响（不能插到中间、不能是必选）
+// 位置参数的问题：想用新参数又要跳过前面的参数时，需要一串 undefined 占位
+// createUserWithEmail('foo', undefined, undefined, 'admin')
+//
+// 参数较多时，用对象参数 + 解构默认值更清晰：
+// 之后再加参数只需在 opts 里加字段，调用方不用关心顺序，也不会破坏旧调用
+function createUserByOpts(name: string, opts: { age?: number, email?: string } = {}) {
+  const { age = 18, email } = opts
+  return { name, age, email }
+}
+
+createUserByOpts('foo', { email: 'a@b.com' })
+
+// 函数类型里只能用 `?`，默认值只能写在实现中
+type CreateUserFn = (name: string, age?: number, email?: string) => object
+
+// 6.2 对象参数 + 解构（推荐：参数多、可能继续新增时）
+// - 有默认值：解构默认值（age = 18）
+// - 可不传且无默认值：`?`（email?: string）
+// - 必传：不加 `?`
+// 类型单独定义便于复用；整个对象都可选时要给 `= {}`，否则 f() 会报错
+// 不适合的场景：1~2 个含义明显的参数、需对应其他 API 签名的回调、重载 / this / 类型守卫
+interface CreateUserOpts {
+  name: string
+  age?: number
+  email?: string
+  role?: string
+}
+
+function createUserByDestructure({ name, age = 18, email, role = 'user' }: CreateUserOpts) {
+  return { name, age, email, role }
+}
+
+createUserByDestructure({ name: 'foo', role: 'admin' }) // 不用占位，也不关心顺序
+
 // 7. 剩余参数
 function sum(...nums: number[]): number {
   return nums.reduce((total, n) => total + n, 0)
@@ -110,6 +154,9 @@ export {
   counter,
   createAdder,
   createUser,
+  createUserByDestructure,
+  createUserByOpts,
+  createUserWithEmail,
   div,
   fetchData,
   format,
@@ -124,4 +171,4 @@ export {
   sum,
   throwError,
 }
-export type { AddParams, AddReturn, DivFn, MathFn }
+export type { AddParams, AddReturn, CreateUserFn, CreateUserOpts, DivFn, MathFn }
