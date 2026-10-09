@@ -15,6 +15,7 @@
 | `07-utility-types.ts` | Partial / Pick / Omit / Record / Exclude / ReturnType / Awaited 等内置工具类型 |
 | `08-type-operations.ts` | typeof / keyof / 索引访问、条件类型、infer、映射类型、模板字面量、satisfies |
 | `09-modules-and-declarations.ts` | import type、`.d.ts`、declare、全局 / 模块扩展、namespace |
+| `10-builtin-objects.ts` | Map / Set / WeakMap、Array / Object 方法的返回类型、Promise、JSON 与错误、Date / 正则、迭代器、常用 DOM API |
 
 ## 学习路线
 
@@ -32,8 +33,22 @@
 ## tsconfig 中与这个项目相关的严格选项
 
 - `strict`：开启全部严格检查（`strictNullChecks`、`noImplicitAny`、`strictFunctionTypes` 等）。
-- `noUnusedLocals` / `noUnusedParameters`：未使用的变量 / 参数会报错，所以示例都用 `export` 导出。
+- `noUncheckedIndexedAccess`：数组 / 索引签名取值会带上 `undefined`，越界访问要先判断。
 - `noImplicitOverride`：子类重写方法必须写 `override`。
 - `noPropertyAccessFromIndexSignature`：索引签名的属性必须用 `obj['key']` 访问。
 - `noImplicitReturns`：所有分支都要有返回值。
-- `isolatedModules`：仅作类型使用的导入建议写 `import type`。
+- `verbatimModuleSyntax`：仅作类型使用的导入必须写 `import type`。
+- `noUnusedLocals` / `noUnusedParameters`：已关闭（demo 项目允许未使用的变量），示例仍然用 `export` 导出。
+
+## 下一步：Vue 3 + TS 实战
+
+基础部分学完后，看 `src/pages/ts-vue/`（可在浏览器里直接访问 `/ts-vue/...`），配套的组件在 `src/components/ts-vue/`：
+
+| 页面 | 内容 |
+| --- | --- |
+| `01-props-emits.vue` | `defineProps` / `defineEmits` / `defineModel` / `defineSlots` / `defineExpose`、泛型组件、子组件实例类型 |
+| `02-reactivity.vue` | `ref<T>` / `reactive` / `computed` / `watch` 的类型、`MaybeRefOrGetter`、DOM 模板引用、原生事件类型 |
+| `03-composables-inject.vue` | 泛型 composable、元组返回值、`InjectionKey` 的 provide / inject |
+| `04-pinia-router-axios.vue` | setup 风格的 Pinia store、`useRoute` / `useRouter`、Axios 泛型响应封装 |
+
+在项目根目录运行 `pnpm type-check` 可以检查整个项目的类型。
