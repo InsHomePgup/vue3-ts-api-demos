@@ -1,29 +1,47 @@
+/* eslint-disable jsonc/sort-keys -- 按功能分组排列，便于阅读 */
 {
   "compilerOptions": {
+    // ---------- 环境 ----------
     "target": "ESNext",
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
+    "useDefineForClassFields": true,
+    // Vite 项目使用 Bundler 解析：相对导入可以省略扩展名，也兼容 package.json 的 exports
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "resolveJsonModule": true,
+    "allowJs": true,
+    "noEmit": true,
+
+    // ---------- JSX / TSX ----------
+    // jsxImportSource 让 .tsx 使用 Vue 自带的 JSX 类型（标签、属性、事件都有提示）
     "jsx": "preserve",
-    "baseUrl": "./",
-    "rootDir": "src",
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
+    "jsxImportSource": "vue",
+
+    // ---------- 路径与类型 ----------
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["./src/*"]
     },
     "types": ["vite/client"],
-    "allowJs": true,
+
+    // ---------- 严格检查 ----------
     "strict": true,
-    "noFallthroughCasesInSwitch": true,
     "noImplicitOverride": true,
     "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
     "noPropertyAccessFromIndexSignature": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noEmit": true,
-    "allowSyntheticDefaultImports": true,
-    // 新增的优化配置
+    // 数组 / 索引签名取值会带上 undefined，避免越界访问的隐患
+    "noUncheckedIndexedAccess": true,
+    // demo 项目允许存在未使用的变量，和 eslint.config.mjs 里的 unused-imports 规则保持一致
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+
+    // ---------- 模块互操作 ----------
     "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
+    // 仅作类型使用的导入必须写 import type，保证与 Vite / esbuild 的单文件编译一致
+    "verbatimModuleSyntax": true,
     "skipLibCheck": true
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "src/**/*.js"],

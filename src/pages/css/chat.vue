@@ -118,8 +118,14 @@ function shouldShowTimestamp(index: number): boolean {
     return true
   } // 第一条消息总是显示时间戳
 
-  const currentTime = new Date(messages[index].time)
-  const prevTime = new Date(messages[index - 1].time)
+  const current = messages[index]
+  const prev = messages[index - 1]
+  if (!current || !prev) {
+    return false
+  }
+
+  const currentTime = new Date(current.time)
+  const prevTime = new Date(prev.time)
 
   // 计算时间差（毫秒）
   const timeDiff = currentTime.getTime() - prevTime.getTime()

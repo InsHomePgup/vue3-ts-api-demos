@@ -156,7 +156,7 @@ class MyPromise {
         try {
           then.call(
             x,
-            (y) => {
+            (y: unknown) => {
               if (called) {
                 return
               }
@@ -164,7 +164,7 @@ class MyPromise {
               // 递归解析
               this.resolvePromise(promise, y, resolve, reject)
             },
-            (r) => {
+            (r: unknown) => {
               if (called) {
                 return
               }
