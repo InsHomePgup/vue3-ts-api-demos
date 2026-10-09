@@ -1,0 +1,33 @@
+version: 2
+updates:
+  - package-ecosystem: npm # 对 pnpm 项目同样适用，会更新 pnpm-lock.yaml | Also works for pnpm projects, updates pnpm-lock.yaml
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+      time: '03:00'
+      timezone: Asia/Shanghai
+    open-pull-requests-limit: 10
+    commit-message:
+      prefix: 'chore'
+      include: scope
+    # 把所有更新合并成一个 PR，减少噪音 | Group all updates into one PR to reduce noise
+    groups:
+      all-dependencies:
+        patterns:
+          - '*'
+    ignore:
+      # 所有依赖只自动升级小版本和补丁版本，大版本由人工升级 | Auto-upgrade minor/patch only for all deps; major versions are upgraded manually
+      - dependency-name: '*'
+        update-types: ['version-update:semver-major']
+      # 完全不想升级的依赖单独列在这里 | Dependencies you never want upgraded go here
+      # TypeScript 保持当前版本，不需要追最新 | Keep TypeScript on the current version, no need to chase the latest
+      - dependency-name: typescript
+      # 忽略指定版本范围的写法 | Ignore a specific version range:
+      # - dependency-name: eslint
+      #   versions: ['>=10.0.0']
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
