@@ -14,10 +14,15 @@ import type {
   ParamValueZeroOrMore,
   ParamValueZeroOrOne,
 } from 'vue-router'
+import type {
+  _ExtractParamParserType,
+} from 'vue-router/experimental'
 
 declare module 'vue-router' {
   interface TypesConfig {
-    ParamParsers: never
+    _ParamParsers: {}
+    RouteNamedMap: import('vue-router/auto-routes').RouteNamedMap
+    _RouteFileInfoMap: import('vue-router/auto-routes')._RouteFileInfoMap
   }
 }
 
@@ -233,11 +238,15 @@ declare module 'vue-router/auto-routes' {
         | '/'
       views:
         | never
+      pathParamNames:
+        | never
     }
     'src/pages/apply/grid.vue': {
       routes:
         | '/apply/grid'
       views:
+        | never
+      pathParamNames:
         | never
     }
     'src/pages/axios/axios01.vue': {
@@ -245,11 +254,15 @@ declare module 'vue-router/auto-routes' {
         | '/axios/axios01'
       views:
         | never
+      pathParamNames:
+        | never
     }
     'src/pages/css/animate.vue': {
       routes:
         | '/css/animate'
       views:
+        | never
+      pathParamNames:
         | never
     }
     'src/pages/css/background.vue': {
@@ -257,11 +270,15 @@ declare module 'vue-router/auto-routes' {
         | '/css/background'
       views:
         | never
+      pathParamNames:
+        | never
     }
     'src/pages/css/bfc-margin.vue': {
       routes:
         | '/css/bfc-margin'
       views:
+        | never
+      pathParamNames:
         | never
     }
     'src/pages/css/border-radius.vue': {
@@ -269,11 +286,15 @@ declare module 'vue-router/auto-routes' {
         | '/css/border-radius'
       views:
         | never
+      pathParamNames:
+        | never
     }
     'src/pages/css/chat.vue': {
       routes:
         | '/css/chat'
       views:
+        | never
+      pathParamNames:
         | never
     }
     'src/pages/css/flex.vue': {
@@ -281,11 +302,15 @@ declare module 'vue-router/auto-routes' {
         | '/css/flex'
       views:
         | never
+      pathParamNames:
+        | never
     }
     'src/pages/css/grid.vue': {
       routes:
         | '/css/grid'
       views:
+        | never
+      pathParamNames:
         | never
     }
     'src/pages/css/Grid/01.vue': {
@@ -293,11 +318,15 @@ declare module 'vue-router/auto-routes' {
         | '/css/Grid/01'
       views:
         | never
+      pathParamNames:
+        | never
     }
     'src/pages/css/Grid/02.vue': {
       routes:
         | '/css/Grid/02'
       views:
+        | never
+      pathParamNames:
         | never
     }
     'src/pages/css/resp.vue': {
@@ -305,11 +334,15 @@ declare module 'vue-router/auto-routes' {
         | '/css/resp'
       views:
         | never
+      pathParamNames:
+        | never
     }
     'src/pages/css/transform.vue': {
       routes:
         | '/css/transform'
       views:
+        | never
+      pathParamNames:
         | never
     }
     'src/pages/css/transition.vue': {
@@ -317,11 +350,15 @@ declare module 'vue-router/auto-routes' {
         | '/css/transition'
       views:
         | never
+      pathParamNames:
+        | never
     }
     'src/pages/css/transition-behavior.vue': {
       routes:
         | '/css/transition-behavior'
       views:
+        | never
+      pathParamNames:
         | never
     }
     'src/pages/html/01-tag.vue': {
@@ -329,11 +366,15 @@ declare module 'vue-router/auto-routes' {
         | '/html/01-tag'
       views:
         | never
+      pathParamNames:
+        | never
     }
     'src/pages/template/base.vue': {
       routes:
         | '/template/base'
       views:
+        | never
+      pathParamNames:
         | never
     }
     'src/pages/ts/array/index01.vue': {
@@ -341,11 +382,15 @@ declare module 'vue-router/auto-routes' {
         | '/ts/array/index01'
       views:
         | never
+      pathParamNames:
+        | never
     }
     'src/pages/ts/index01.vue': {
       routes:
         | '/ts/index01'
       views:
+        | never
+      pathParamNames:
         | never
     }
     'src/pages/ts/index02.vue': {
@@ -353,11 +398,15 @@ declare module 'vue-router/auto-routes' {
         | '/ts/index02'
       views:
         | never
+      pathParamNames:
+        | never
     }
     'src/pages/ts/index03.vue': {
       routes:
         | '/ts/index03'
       views:
+        | never
+      pathParamNames:
         | never
     }
     'src/pages/ts/string/index01.vue': {
@@ -365,11 +414,15 @@ declare module 'vue-router/auto-routes' {
         | '/ts/string/index01'
       views:
         | never
+      pathParamNames:
+        | never
     }
     'src/pages/tsx/index01.vue': {
       routes:
         | '/tsx/index01'
       views:
+        | never
+      pathParamNames:
         | never
     }
     'src/pages/vue/01.vue': {
@@ -377,17 +430,23 @@ declare module 'vue-router/auto-routes' {
         | '/vue/01'
       views:
         | never
+      pathParamNames:
+        | never
     }
     'src/pages/vue/02.vue': {
       routes:
         | '/vue/02'
       views:
         | never
+      pathParamNames:
+        | never
     }
     'src/pages/vue/03-transition.vue': {
       routes:
         | '/vue/03-transition'
       views:
+        | never
+      pathParamNames:
         | never
     }
   }

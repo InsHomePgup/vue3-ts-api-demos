@@ -1,5 +1,6 @@
 <template>
   <div class="container-wrapper">
+    <!-- grid 布局常见的中台 -->
     <div class="grid-container">
       <div class="item item-1">Header</div>
       <div class="item item-2">Sidebar</div>
@@ -21,10 +22,11 @@
 }
 
 .grid-container {
+  /** 声明这是一个grid布局的盒子 创建一个gfc grid上下文 */
   display: grid;
   grid-template-columns: 200px 1fr;
   grid-template-rows: 60px 1fr 60px;
-  grid-template-areas: 
+  grid-template-areas:
     "header header"
     "sidebar main"
     "footer footer";
