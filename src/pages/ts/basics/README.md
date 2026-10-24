@@ -42,7 +42,7 @@
 
 ## 下一步：Vue 3 + TS 实战
 
-基础部分学完后，看 `src/pages/ts-vue/`（可在浏览器里直接访问 `/ts-vue/...`），配套的组件在 `src/components/ts-vue/`：
+基础部分学完后，看 `src/pages/ts/vue/`（可在浏览器里直接访问 `/ts/vue/...`），配套的组件在 `src/components/ts-vue/`：
 
 | 页面 | 内容 |
 | --- | --- |

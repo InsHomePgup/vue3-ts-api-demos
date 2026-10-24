@@ -1,110 +1,91 @@
 <template>
-  <div class="container">
-    <header class="header">
-      <h1>Demo Pages Index</h1>
-      <div class="counter-demo">
-        <span>Counter: {{ countStore.count }}</span>
-        <button class="btn" @click="countStore.increment">
-          +
-        </button>
+  <div class="mx-auto max-w-6xl p-6">
+    <n-space vertical :size="20">
+      <div>
+        <n-h1 class="!mb-1">
+          Vue3 + TS API Demos
+        </n-h1>
+        <n-text depth="3">
+          共 {{ items.length }} 个示例,按主题分类。打开页面后,右上角可以查看源码。
+        </n-text>
       </div>
-    </header>
 
-    <div class="route-list">
-      <div v-for="route in availableRoutes" :key="route.path" class="route-item">
-        <router-link :to="route.path" class="route-link">
-          {{ route.name || route.path }}
-        </router-link>
-      </div>
-    </div>
+      <n-input v-model:value="keyword" clearable placeholder="搜索标题 / 说明 / 标签 / 路径" />
+
+      <n-space :size="8">
+        <n-tag
+          v-for="t in allTags"
+          :key="t"
+          checkable
+          :checked="tag === t"
+          @update:checked="tag = $event ? t : ''"
+        >
+          {{ t }}
+        </n-tag>
+      </n-space>
+
+      <section v-if="recentItems.length && !filtering">
+        <n-h3>最近访问</n-h3>
+        <n-grid :cols="gridCols" responsive="screen" :xGap="12" :yGap="12">
+          <n-gi v-for="item in recentItems" :key="item.path">
+            <CatalogCard :item="item" />
+          </n-gi>
+        </n-grid>
+      </section>
+
+      <section v-for="s in sections" :key="s.key">
+        <n-h3>
+          {{ s.title }}
+          <n-text depth="3" class="text-sm">
+            {{ s.items.length }}
+          </n-text>
+        </n-h3>
+        <n-grid :cols="gridCols" responsive="screen" :xGap="12" :yGap="12">
+          <n-gi v-for="item in s.items" :key="item.path">
+            <CatalogCard :item="item" />
+          </n-gi>
+        </n-grid>
+      </section>
+
+      <n-empty v-if="!sections.length" description="没有匹配的示例" />
+    </n-space>
   </div>
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
-import { useRouter } from 'vue-router'
-import { useCounterStore } from '@/stores/counter'
+import { sectionKeyOf, sectionTitle, useCatalog } from '@/composables/useCatalog'
+import { recent } from '@/composables/useRecent'
 
-const countStore = useCounterStore()
-const router = useRouter()
+const { items, byPath } = useCatalog()
 
-const availableRoutes = computed(() => {
-  return router.getRoutes()
-    .filter(route =>
-      // Filter out the home page ("/") and internal routes
-      route.path !== '/'
-      && !route.path.includes(':') // Exclude dynamic routes if needed, or keep them
-      && !route.redirect, // Exclude redirect routes
-    )
-    .sort((a, b) => a.path.localeCompare(b.path))
+const gridCols = '1 s:2 l:3'
+const keyword = ref('')
+const tag = ref('')
+const filtering = computed(() => !!keyword.value.trim() || !!tag.value)
+
+const allTags = [...new Set(items.flatMap(i => i.tags))].sort()
+
+const filtered = computed(() => {
+  const k = keyword.value.trim().toLowerCase()
+  return items.filter((i) => {
+    if (tag.value && !i.tags.includes(tag.value))
+      return false
+    return !k || [i.title, i.desc, i.path, ...i.tags].some(s => s.toLowerCase().includes(k))
+  })
 })
+
+// 按目录前两级分区,items 已按目录顺序排好 / group by the first two directory levels; items are already ordered
+const sections = computed(() => {
+  const map = new Map<string, typeof items>()
+  for (const i of filtered.value) {
+    const key = sectionKeyOf(i.dir)
+    map.set(key, [...(map.get(key) ?? []), i])
+  }
+  return Array.from(map, ([key, list]) => ({ key, title: sectionTitle(key), items: list }))
+})
+
+const recentItems = computed(() => recent.value.flatMap((p) => {
+  const i = byPath.get(p)
+  return i ? [i] : []
+}))
 </script>
-
-<style scoped lang="scss">
-.container {
-  padding: 20px;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 30px;
-  border-bottom: 1px solid #eee;
-  padding-bottom: 20px;
-}
-
-.counter-demo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-weight: bold;
-}
-
-.btn {
-  padding: 4px 12px;
-  background-color: #3b82f6;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-
-  &:hover {
-    background-color: #2563eb;
-  }
-}
-
-.route-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 16px;
-}
-
-.route-item {
-  background-color: #f9fafb;
-  border: 1px solid #e5e7eb;
-  border-radius: 8px;
-  transition: all 0.2s;
-
-  &:hover {
-    border-color: #3b82f6;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    transform: translateY(-2px);
-  }
-}
-
-.route-link {
-  display: block;
-  padding: 16px;
-  color: #374151;
-  text-decoration: none;
-  font-weight: 500;
-  word-break: break-all;
-
-  &:hover {
-    color: #2563eb;
-  }
-}
-</style>

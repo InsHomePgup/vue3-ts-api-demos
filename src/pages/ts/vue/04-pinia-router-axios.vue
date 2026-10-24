@@ -77,10 +77,10 @@ function goToTab(name: 'a' | 'b'): void {
   router.push({ query: { tab: name } })
 }
 
-// 开启类型化路由后（typed-router.d.ts），也可以用 router.push({ name: '/ts-vue/01-props-emits' })，路由名有提示
-// With typed routes enabled (typed-router.d.ts), you can also use router.push({ name: '/ts-vue/01-props-emits' }) with route-name hints
+// 开启类型化路由后（typed-router.d.ts），也可以用 router.push({ name: '/ts/vue/01-props-emits' })，路由名有提示
+// With typed routes enabled (typed-router.d.ts), you can also use router.push({ name: '/ts/vue/01-props-emits' }) with route-name hints
 function goToProps(): void {
-  router.push('/ts-vue/01-props-emits')
+  router.push('/ts/vue/01-props-emits')
 }
 
 // ---------- Axios ----------

@@ -38,16 +38,9 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
-    '/apply/grid': RouteRecordInfo<
-      '/apply/grid',
-      '/apply/grid',
-      Record<never, never>,
-      Record<never, never>,
-      | never
-    >,
-    '/axios/axios01': RouteRecordInfo<
-      '/axios/axios01',
-      '/axios/axios01',
+    '/axios/01-abort-request': RouteRecordInfo<
+      '/axios/01-abort-request',
+      '/axios/01-abort-request',
       Record<never, never>,
       Record<never, never>,
       | never
@@ -94,16 +87,9 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
-    '/css/layout/flex/01-container': RouteRecordInfo<
-      '/css/layout/flex/01-container',
-      '/css/layout/flex/01-container',
-      Record<never, never>,
-      Record<never, never>,
-      | never
-    >,
-    '/css/layout/flex/02-item': RouteRecordInfo<
-      '/css/layout/flex/02-item',
-      '/css/layout/flex/02-item',
+    '/css/layout/flex/playground': RouteRecordInfo<
+      '/css/layout/flex/playground',
+      '/css/layout/flex/playground',
       Record<never, never>,
       Record<never, never>,
       | never
@@ -115,24 +101,23 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
-    '/css/layout/grid': RouteRecordInfo<
-      '/css/layout/grid',
-      '/css/layout/grid',
-      Record<never, never>,
-      Record<never, never>,
-      | '/css/layout/grid/01'
-      | '/css/layout/grid/02'
-    >,
-    '/css/layout/grid/01': RouteRecordInfo<
-      '/css/layout/grid/01',
-      '/css/layout/grid/01',
+    '/css/layout/grid/01-tracks': RouteRecordInfo<
+      '/css/layout/grid/01-tracks',
+      '/css/layout/grid/01-tracks',
       Record<never, never>,
       Record<never, never>,
       | never
     >,
-    '/css/layout/grid/02': RouteRecordInfo<
-      '/css/layout/grid/02',
-      '/css/layout/grid/02',
+    '/css/layout/grid/02-dashboard': RouteRecordInfo<
+      '/css/layout/grid/02-dashboard',
+      '/css/layout/grid/02-dashboard',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/css/layout/grid/03-dashboard-areas': RouteRecordInfo<
+      '/css/layout/grid/03-dashboard-areas',
+      '/css/layout/grid/03-dashboard-areas',
       Record<never, never>,
       Record<never, never>,
       | never
@@ -165,93 +150,93 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
-    '/template/base': RouteRecordInfo<
-      '/template/base',
-      '/template/base',
+    '/ts/[group]/[name]': RouteRecordInfo<
+      '/ts/[group]/[name]',
+      '/ts/:group/:name',
+      { group: ParamValue<true>, name: ParamValue<true> },
+      { group: ParamValue<false>, name: ParamValue<false> },
+      | never
+    >,
+    '/ts/practice/01-utility-intersection': RouteRecordInfo<
+      '/ts/practice/01-utility-intersection',
+      '/ts/practice/01-utility-intersection',
       Record<never, never>,
       Record<never, never>,
       | never
     >,
-    '/ts/array/index01': RouteRecordInfo<
-      '/ts/array/index01',
-      '/ts/array/index01',
+    '/ts/practice/02-map-and-return': RouteRecordInfo<
+      '/ts/practice/02-map-and-return',
+      '/ts/practice/02-map-and-return',
       Record<never, never>,
       Record<never, never>,
       | never
     >,
-    '/ts/index01': RouteRecordInfo<
-      '/ts/index01',
-      '/ts/index01',
+    '/ts/practice/03-event-loop': RouteRecordInfo<
+      '/ts/practice/03-event-loop',
+      '/ts/practice/03-event-loop',
       Record<never, never>,
       Record<never, never>,
       | never
     >,
-    '/ts/index02': RouteRecordInfo<
-      '/ts/index02',
-      '/ts/index02',
+    '/ts/practice/04-array-methods': RouteRecordInfo<
+      '/ts/practice/04-array-methods',
+      '/ts/practice/04-array-methods',
       Record<never, never>,
       Record<never, never>,
       | never
     >,
-    '/ts/index03': RouteRecordInfo<
-      '/ts/index03',
-      '/ts/index03',
+    '/ts/practice/05-string-methods': RouteRecordInfo<
+      '/ts/practice/05-string-methods',
+      '/ts/practice/05-string-methods',
       Record<never, never>,
       Record<never, never>,
       | never
     >,
-    '/ts/string/index01': RouteRecordInfo<
-      '/ts/string/index01',
-      '/ts/string/index01',
+    '/ts/vue/01-props-emits': RouteRecordInfo<
+      '/ts/vue/01-props-emits',
+      '/ts/vue/01-props-emits',
       Record<never, never>,
       Record<never, never>,
       | never
     >,
-    '/ts-vue/01-props-emits': RouteRecordInfo<
-      '/ts-vue/01-props-emits',
-      '/ts-vue/01-props-emits',
+    '/ts/vue/02-reactivity': RouteRecordInfo<
+      '/ts/vue/02-reactivity',
+      '/ts/vue/02-reactivity',
       Record<never, never>,
       Record<never, never>,
       | never
     >,
-    '/ts-vue/02-reactivity': RouteRecordInfo<
-      '/ts-vue/02-reactivity',
-      '/ts-vue/02-reactivity',
+    '/ts/vue/03-composables-inject': RouteRecordInfo<
+      '/ts/vue/03-composables-inject',
+      '/ts/vue/03-composables-inject',
       Record<never, never>,
       Record<never, never>,
       | never
     >,
-    '/ts-vue/03-composables-inject': RouteRecordInfo<
-      '/ts-vue/03-composables-inject',
-      '/ts-vue/03-composables-inject',
+    '/ts/vue/04-pinia-router-axios': RouteRecordInfo<
+      '/ts/vue/04-pinia-router-axios',
+      '/ts/vue/04-pinia-router-axios',
       Record<never, never>,
       Record<never, never>,
       | never
     >,
-    '/ts-vue/04-pinia-router-axios': RouteRecordInfo<
-      '/ts-vue/04-pinia-router-axios',
-      '/ts-vue/04-pinia-router-axios',
+    '/tsx/01-jsx-component': RouteRecordInfo<
+      '/tsx/01-jsx-component',
+      '/tsx/01-jsx-component',
       Record<never, never>,
       Record<never, never>,
       | never
     >,
-    '/tsx/index01': RouteRecordInfo<
-      '/tsx/index01',
-      '/tsx/index01',
+    '/vue/01-tree-selector': RouteRecordInfo<
+      '/vue/01-tree-selector',
+      '/vue/01-tree-selector',
       Record<never, never>,
       Record<never, never>,
       | never
     >,
-    '/vue/01': RouteRecordInfo<
-      '/vue/01',
-      '/vue/01',
-      Record<never, never>,
-      Record<never, never>,
-      | never
-    >,
-    '/vue/02': RouteRecordInfo<
-      '/vue/02',
-      '/vue/02',
+    '/vue/02-ref-reactive': RouteRecordInfo<
+      '/vue/02-ref-reactive',
+      '/vue/02-ref-reactive',
       Record<never, never>,
       Record<never, never>,
       | never
@@ -284,17 +269,9 @@ declare module 'vue-router/auto-routes' {
       pathParamNames:
         | never
     }
-    'src/pages/apply/grid.vue': {
+    'src/pages/axios/01-abort-request.vue': {
       routes:
-        | '/apply/grid'
-      views:
-        | never
-      pathParamNames:
-        | never
-    }
-    'src/pages/axios/axios01.vue': {
-      routes:
-        | '/axios/axios01'
+        | '/axios/01-abort-request'
       views:
         | never
       pathParamNames:
@@ -348,17 +325,9 @@ declare module 'vue-router/auto-routes' {
       pathParamNames:
         | never
     }
-    'src/pages/css/layout/flex/01-container.vue': {
+    'src/pages/css/layout/flex/playground.vue': {
       routes:
-        | '/css/layout/flex/01-container'
-      views:
-        | never
-      pathParamNames:
-        | never
-    }
-    'src/pages/css/layout/flex/02-item.vue': {
-      routes:
-        | '/css/layout/flex/02-item'
+        | '/css/layout/flex/playground'
       views:
         | never
       pathParamNames:
@@ -372,27 +341,25 @@ declare module 'vue-router/auto-routes' {
       pathParamNames:
         | never
     }
-    'src/pages/css/layout/grid.vue': {
+    'src/pages/css/layout/grid/01-tracks.vue': {
       routes:
-        | '/css/layout/grid'
-        | '/css/layout/grid/01'
-        | '/css/layout/grid/02'
-      views:
-        | 'default'
-      pathParamNames:
-        | never
-    }
-    'src/pages/css/layout/grid/01.vue': {
-      routes:
-        | '/css/layout/grid/01'
+        | '/css/layout/grid/01-tracks'
       views:
         | never
       pathParamNames:
         | never
     }
-    'src/pages/css/layout/grid/02.vue': {
+    'src/pages/css/layout/grid/02-dashboard.vue': {
       routes:
-        | '/css/layout/grid/02'
+        | '/css/layout/grid/02-dashboard'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
+    'src/pages/css/layout/grid/03-dashboard-areas.vue': {
+      routes:
+        | '/css/layout/grid/03-dashboard-areas'
       views:
         | never
       pathParamNames:
@@ -430,105 +397,105 @@ declare module 'vue-router/auto-routes' {
       pathParamNames:
         | never
     }
-    'src/pages/template/base.vue': {
+    'src/pages/ts/[group]/[name].vue': {
       routes:
-        | '/template/base'
+        | '/ts/[group]/[name]'
+      views:
+        | never
+      pathParamNames:
+        | 'name'
+    }
+    'src/pages/ts/practice/01-utility-intersection.vue': {
+      routes:
+        | '/ts/practice/01-utility-intersection'
       views:
         | never
       pathParamNames:
         | never
     }
-    'src/pages/ts/array/index01.vue': {
+    'src/pages/ts/practice/02-map-and-return.vue': {
       routes:
-        | '/ts/array/index01'
+        | '/ts/practice/02-map-and-return'
       views:
         | never
       pathParamNames:
         | never
     }
-    'src/pages/ts/index01.vue': {
+    'src/pages/ts/practice/03-event-loop.vue': {
       routes:
-        | '/ts/index01'
+        | '/ts/practice/03-event-loop'
       views:
         | never
       pathParamNames:
         | never
     }
-    'src/pages/ts/index02.vue': {
+    'src/pages/ts/practice/04-array-methods.vue': {
       routes:
-        | '/ts/index02'
+        | '/ts/practice/04-array-methods'
       views:
         | never
       pathParamNames:
         | never
     }
-    'src/pages/ts/index03.vue': {
+    'src/pages/ts/practice/05-string-methods.vue': {
       routes:
-        | '/ts/index03'
+        | '/ts/practice/05-string-methods'
       views:
         | never
       pathParamNames:
         | never
     }
-    'src/pages/ts/string/index01.vue': {
+    'src/pages/ts/vue/01-props-emits.vue': {
       routes:
-        | '/ts/string/index01'
+        | '/ts/vue/01-props-emits'
       views:
         | never
       pathParamNames:
         | never
     }
-    'src/pages/ts-vue/01-props-emits.vue': {
+    'src/pages/ts/vue/02-reactivity.vue': {
       routes:
-        | '/ts-vue/01-props-emits'
+        | '/ts/vue/02-reactivity'
       views:
         | never
       pathParamNames:
         | never
     }
-    'src/pages/ts-vue/02-reactivity.vue': {
+    'src/pages/ts/vue/03-composables-inject.vue': {
       routes:
-        | '/ts-vue/02-reactivity'
+        | '/ts/vue/03-composables-inject'
       views:
         | never
       pathParamNames:
         | never
     }
-    'src/pages/ts-vue/03-composables-inject.vue': {
+    'src/pages/ts/vue/04-pinia-router-axios.vue': {
       routes:
-        | '/ts-vue/03-composables-inject'
+        | '/ts/vue/04-pinia-router-axios'
       views:
         | never
       pathParamNames:
         | never
     }
-    'src/pages/ts-vue/04-pinia-router-axios.vue': {
+    'src/pages/tsx/01-jsx-component.vue': {
       routes:
-        | '/ts-vue/04-pinia-router-axios'
+        | '/tsx/01-jsx-component'
       views:
         | never
       pathParamNames:
         | never
     }
-    'src/pages/tsx/index01.vue': {
+    'src/pages/vue/01-tree-selector.vue': {
       routes:
-        | '/tsx/index01'
+        | '/vue/01-tree-selector'
       views:
         | never
       pathParamNames:
         | never
     }
-    'src/pages/vue/01.vue': {
+    'src/pages/vue/02-ref-reactive.vue': {
       routes:
-        | '/vue/01'
-      views:
-        | never
-      pathParamNames:
-        | never
-    }
-    'src/pages/vue/02.vue': {
-      routes:
-        | '/vue/02'
+        | '/vue/02-ref-reactive'
       views:
         | never
       pathParamNames:
