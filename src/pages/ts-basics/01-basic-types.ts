@@ -18,7 +18,7 @@ export const undef: undefined = undefined
 // 2. 类型推断：能推断出来的就不用手写
 // 2. Type inference: no need to annotate what can be inferred
 export const inferred = 'abc' // string
-export const inferredConst = 'abc' as const // 'abc'（字面量类型） | 'abc' (literal type)
+export const inferredConst = 'abc' as const // 'abc'（字面量类型） | 'abc' (literal type)  常量断言，断言成常量去锁定类型
 export const inferredArr = [1, 2, 3] // number[]
 export const inferredObj = { id: 1, name: 'foo' } // { id: number, name: string }
 

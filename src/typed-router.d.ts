@@ -52,93 +52,108 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
-    '/css/animate': RouteRecordInfo<
-      '/css/animate',
-      '/css/animate',
+    '/css/animation/animate': RouteRecordInfo<
+      '/css/animation/animate',
+      '/css/animation/animate',
       Record<never, never>,
       Record<never, never>,
       | never
     >,
-    '/css/background': RouteRecordInfo<
-      '/css/background',
-      '/css/background',
+    '/css/animation/transform': RouteRecordInfo<
+      '/css/animation/transform',
+      '/css/animation/transform',
       Record<never, never>,
       Record<never, never>,
       | never
     >,
-    '/css/bfc-margin': RouteRecordInfo<
-      '/css/bfc-margin',
-      '/css/bfc-margin',
+    '/css/animation/transition': RouteRecordInfo<
+      '/css/animation/transition',
+      '/css/animation/transition',
       Record<never, never>,
       Record<never, never>,
       | never
     >,
-    '/css/border-radius': RouteRecordInfo<
-      '/css/border-radius',
-      '/css/border-radius',
+    '/css/animation/transition-behavior': RouteRecordInfo<
+      '/css/animation/transition-behavior',
+      '/css/animation/transition-behavior',
       Record<never, never>,
       Record<never, never>,
       | never
     >,
-    '/css/chat': RouteRecordInfo<
-      '/css/chat',
-      '/css/chat',
+    '/css/demo/chat': RouteRecordInfo<
+      '/css/demo/chat',
+      '/css/demo/chat',
       Record<never, never>,
       Record<never, never>,
       | never
     >,
-    '/css/flex': RouteRecordInfo<
-      '/css/flex',
-      '/css/flex',
+    '/css/layout/bfc-margin': RouteRecordInfo<
+      '/css/layout/bfc-margin',
+      '/css/layout/bfc-margin',
       Record<never, never>,
       Record<never, never>,
       | never
     >,
-    '/css/grid': RouteRecordInfo<
-      '/css/grid',
-      '/css/grid',
+    '/css/layout/flex/01-container': RouteRecordInfo<
+      '/css/layout/flex/01-container',
+      '/css/layout/flex/01-container',
       Record<never, never>,
       Record<never, never>,
       | never
     >,
-    '/css/Grid/01': RouteRecordInfo<
-      '/css/Grid/01',
-      '/css/Grid/01',
+    '/css/layout/flex/02-item': RouteRecordInfo<
+      '/css/layout/flex/02-item',
+      '/css/layout/flex/02-item',
       Record<never, never>,
       Record<never, never>,
       | never
     >,
-    '/css/Grid/02': RouteRecordInfo<
-      '/css/Grid/02',
-      '/css/Grid/02',
+    '/css/layout/flex/self-align-chat': RouteRecordInfo<
+      '/css/layout/flex/self-align-chat',
+      '/css/layout/flex/self-align-chat',
       Record<never, never>,
       Record<never, never>,
       | never
     >,
-    '/css/resp': RouteRecordInfo<
-      '/css/resp',
-      '/css/resp',
+    '/css/layout/grid': RouteRecordInfo<
+      '/css/layout/grid',
+      '/css/layout/grid',
+      Record<never, never>,
+      Record<never, never>,
+      | '/css/layout/grid/01'
+      | '/css/layout/grid/02'
+    >,
+    '/css/layout/grid/01': RouteRecordInfo<
+      '/css/layout/grid/01',
+      '/css/layout/grid/01',
       Record<never, never>,
       Record<never, never>,
       | never
     >,
-    '/css/transform': RouteRecordInfo<
-      '/css/transform',
-      '/css/transform',
+    '/css/layout/grid/02': RouteRecordInfo<
+      '/css/layout/grid/02',
+      '/css/layout/grid/02',
       Record<never, never>,
       Record<never, never>,
       | never
     >,
-    '/css/transition': RouteRecordInfo<
-      '/css/transition',
-      '/css/transition',
+    '/css/layout/resp': RouteRecordInfo<
+      '/css/layout/resp',
+      '/css/layout/resp',
       Record<never, never>,
       Record<never, never>,
       | never
     >,
-    '/css/transition-behavior': RouteRecordInfo<
-      '/css/transition-behavior',
-      '/css/transition-behavior',
+    '/css/style/background': RouteRecordInfo<
+      '/css/style/background',
+      '/css/style/background',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/css/style/border-radius': RouteRecordInfo<
+      '/css/style/border-radius',
+      '/css/style/border-radius',
       Record<never, never>,
       Record<never, never>,
       | never
@@ -285,105 +300,123 @@ declare module 'vue-router/auto-routes' {
       pathParamNames:
         | never
     }
-    'src/pages/css/animate.vue': {
+    'src/pages/css/animation/animate.vue': {
       routes:
-        | '/css/animate'
+        | '/css/animation/animate'
       views:
         | never
       pathParamNames:
         | never
     }
-    'src/pages/css/background.vue': {
+    'src/pages/css/animation/transform.vue': {
       routes:
-        | '/css/background'
+        | '/css/animation/transform'
       views:
         | never
       pathParamNames:
         | never
     }
-    'src/pages/css/bfc-margin.vue': {
+    'src/pages/css/animation/transition.vue': {
       routes:
-        | '/css/bfc-margin'
+        | '/css/animation/transition'
       views:
         | never
       pathParamNames:
         | never
     }
-    'src/pages/css/border-radius.vue': {
+    'src/pages/css/animation/transition-behavior.vue': {
       routes:
-        | '/css/border-radius'
+        | '/css/animation/transition-behavior'
       views:
         | never
       pathParamNames:
         | never
     }
-    'src/pages/css/chat.vue': {
+    'src/pages/css/demo/chat.vue': {
       routes:
-        | '/css/chat'
+        | '/css/demo/chat'
       views:
         | never
       pathParamNames:
         | never
     }
-    'src/pages/css/flex.vue': {
+    'src/pages/css/layout/bfc-margin.vue': {
       routes:
-        | '/css/flex'
+        | '/css/layout/bfc-margin'
       views:
         | never
       pathParamNames:
         | never
     }
-    'src/pages/css/grid.vue': {
+    'src/pages/css/layout/flex/01-container.vue': {
       routes:
-        | '/css/grid'
+        | '/css/layout/flex/01-container'
       views:
         | never
       pathParamNames:
         | never
     }
-    'src/pages/css/Grid/01.vue': {
+    'src/pages/css/layout/flex/02-item.vue': {
       routes:
-        | '/css/Grid/01'
+        | '/css/layout/flex/02-item'
       views:
         | never
       pathParamNames:
         | never
     }
-    'src/pages/css/Grid/02.vue': {
+    'src/pages/css/layout/flex/self-align-chat.vue': {
       routes:
-        | '/css/Grid/02'
+        | '/css/layout/flex/self-align-chat'
       views:
         | never
       pathParamNames:
         | never
     }
-    'src/pages/css/resp.vue': {
+    'src/pages/css/layout/grid.vue': {
       routes:
-        | '/css/resp'
+        | '/css/layout/grid'
+        | '/css/layout/grid/01'
+        | '/css/layout/grid/02'
+      views:
+        | 'default'
+      pathParamNames:
+        | never
+    }
+    'src/pages/css/layout/grid/01.vue': {
+      routes:
+        | '/css/layout/grid/01'
       views:
         | never
       pathParamNames:
         | never
     }
-    'src/pages/css/transform.vue': {
+    'src/pages/css/layout/grid/02.vue': {
       routes:
-        | '/css/transform'
+        | '/css/layout/grid/02'
       views:
         | never
       pathParamNames:
         | never
     }
-    'src/pages/css/transition.vue': {
+    'src/pages/css/layout/resp.vue': {
       routes:
-        | '/css/transition'
+        | '/css/layout/resp'
       views:
         | never
       pathParamNames:
         | never
     }
-    'src/pages/css/transition-behavior.vue': {
+    'src/pages/css/style/background.vue': {
       routes:
-        | '/css/transition-behavior'
+        | '/css/style/background'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
+    'src/pages/css/style/border-radius.vue': {
+      routes:
+        | '/css/style/border-radius'
       views:
         | never
       pathParamNames:

@@ -5,6 +5,7 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 import UnoCSS from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 
+import { NaiveUiResolver } from 'unplugin-vue-components/resolvers'
 import Components from 'unplugin-vue-components/vite'
 
 import { defineConfig } from 'vite'
@@ -42,11 +43,7 @@ export default defineConfig({
       include: [/\.vue$/, /\.vue\?vue/, /\.tsx$/], // 包含的文件类型
       exclude: [/[\\/]node_modules[\\/]/, /[\\/]\.git[\\/]/], // 排除的目录
       resolvers: [
-        // 可以添加UI库解析器，例如：
-        // (name) => {
-        //   if (name.startsWith('El'))
-        //     return { importName: name.slice(2), path: 'element-plus' }
-        // }
+        NaiveUiResolver(),
       ],
       types: [{
         from: 'vue-router',
